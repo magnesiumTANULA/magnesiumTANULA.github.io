@@ -107,6 +107,23 @@ h2{font-family:var(--head);font-weight:400;font-size:clamp(25px,6.6vw,34px);line
 .cal-cell.has:hover{transform:scale(1.08) rotate(calc(-4deg*var(--k)))}
 .cal-cell.sel{background:var(--accent);color:#fff}
 .cal-cell b{font-size:clamp(17px,4.6vw,24px);font-weight:400;line-height:1.1}
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+html:has(#zoom[open]){overflow:hidden}
+#zoom{width:min(980px,calc(100vw - 20px));max-height:calc(100dvh - 20px);padding:0;overflow:auto;background:var(--card);color:var(--ink);border:var(--line) solid var(--accent);border-radius:var(--radius);box-shadow:6px 6px 0 var(--shadow)}
+#zoom::backdrop{background:#1e0028c7}
+.zoom-x{position:sticky;top:8px;float:right;margin:8px 8px -48px 0;z-index:2;width:40px;height:40px;border-radius:50%;border:2px solid var(--shadow);background:var(--bar);color:#1a1a1a;font-size:18px;font-weight:900;cursor:pointer}
+.zoom-body{display:grid;gap:0}
+.zoom-img{background:#0000000f;display:flex;justify-content:center;align-items:center}
+.zoom-img img{display:block;max-width:100%;max-height:68dvh;object-fit:contain}
+.zoom-info{padding:16px 18px 20px;min-width:0}
+.zoom-info h3{margin:8px 44px 8px 0;font-family:var(--head);font-weight:400;font-size:22px;line-height:1.35;color:var(--accent);outline:0}
+.zoom-info p{margin:4px 0;font-size:16px;line-height:1.6;overflow-wrap:anywhere}
+.zoom-list{list-style:none;margin:8px 0 0;padding:0}
+.zoom-list li{border-top:2px dotted var(--shadow)}
+.zoom-list button{display:block;width:100%;padding:9px 2px;border:0;background:none;color:inherit;font:inherit;font-size:15px;line-height:1.5;text-align:left;cursor:pointer}
+.zoom-list b{color:var(--accent)}
+.zoom-raw{display:block;margin-top:14px;font-size:14px;color:var(--sub)}
+@media (min-width:760px){.zoom-body{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:stretch}.zoom-img img{max-height:calc(100dvh - 30px)}.zoom-info h3{margin-top:12px}}
 .cal-detail{margin-top:14px;border-top:3px dotted var(--shadow);padding-top:12px}
 .cal-detail h3{margin:6px 0;font-size:20px;line-height:1.3;color:var(--accent)}
 .cal-detail p{margin:2px 0;font-size:14px;color:var(--sub)}
@@ -221,9 +238,9 @@ footer .links{background:var(--card);border-radius:var(--radius);padding:12px 16
   <div class="ev-body">
     <span class="chip">🥔 路哲</span>
     <h3>路哲 PROTEST HALLOWEEN</h3>
-    <p>📍 新宿駅東南口広場</p><p>🎤 路哲</p>
+    <p><span aria-hidden="true">📍</span> <span class="vh">会場：</span>新宿駅東南口広場</p><p><span aria-hidden="true">🎤</span> <span class="vh">出演：</span>路哲</p>
   </div>
-  <a class="ev-flyer" href="https://d3e0luujhwn38u.cloudfront.net/resized/BJz6q7Fg1IRTq-DjZnP4UKdRkk6wmXWvtRqmzUpXy9c/s:3200/plain/s3://typefully-user-uploads/img/original/332740/fa5e6bc7-e1a8-47bb-b1fb-78203c4d4d5a.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/BJz6q7Fg1IRTq-DjZnP4UKdRkk6wmXWvtRqmzUpXy9c/s:3200/plain/s3://typefully-user-uploads/img/original/332740/fa5e6bc7-e1a8-47bb-b1fb-78203c4d4d5a.jpg" alt="路哲 PROTEST HALLOWEEN のフライヤー" loading="lazy"></a>
+  <a class="ev-flyer js-zoom" data-ev="261031" aria-haspopup="dialog" href="https://d3e0luujhwn38u.cloudfront.net/resized/BJz6q7Fg1IRTq-DjZnP4UKdRkk6wmXWvtRqmzUpXy9c/s:3200/plain/s3://typefully-user-uploads/img/original/332740/fa5e6bc7-e1a8-47bb-b1fb-78203c4d4d5a.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/BJz6q7Fg1IRTq-DjZnP4UKdRkk6wmXWvtRqmzUpXy9c/s:3200/plain/s3://typefully-user-uploads/img/original/332740/fa5e6bc7-e1a8-47bb-b1fb-78203c4d4d5a.jpg" alt="路哲 PROTEST HALLOWEEN のフライヤーを大きく見る" loading="lazy"></a>
 </article>
   </section>
 
@@ -234,7 +251,7 @@ footer .links{background:var(--card);border-radius:var(--radius);padding:12px 16
       <button type="button" class="tab" data-t="cal">📅 カレンダー</button>
       <button type="button" class="tab" data-t="list">📋 リスト</button>
     </div>
-    <div class="pane" data-pane="paper"><div class="reel-wrap"><div class="reel" id="reel" tabindex="0" aria-label="松たぬら新聞とフライヤー"><figure class="slide slide-paper" data-sec="8"><a href="assets/shinbun.png" target="_blank" rel="noopener"><img src="assets/shinbun.png" alt="松たぬら新聞（出演予定の一覧）"></a><figcaption>📰 松たぬら新聞（タップで大きく）</figcaption></figure><figure class="slide" data-sec="4"><a href="https://d3e0luujhwn38u.cloudfront.net/resized/BJz6q7Fg1IRTq-DjZnP4UKdRkk6wmXWvtRqmzUpXy9c/s:3200/plain/s3://typefully-user-uploads/img/original/332740/fa5e6bc7-e1a8-47bb-b1fb-78203c4d4d5a.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/BJz6q7Fg1IRTq-DjZnP4UKdRkk6wmXWvtRqmzUpXy9c/s:3200/plain/s3://typefully-user-uploads/img/original/332740/fa5e6bc7-e1a8-47bb-b1fb-78203c4d4d5a.jpg" alt="路哲 PROTEST HALLOWEEN のフライヤー" loading="lazy"></a><figcaption>🥔 10/31(土) 路哲 PROTEST HALLOWEEN</figcaption></figure><figure class="slide" data-sec="4"><a href="https://d3e0luujhwn38u.cloudfront.net/resized/YghbpKh4iFHvc4qEqBtVvgCE3BQp4_OPQD50x18OWKA/s:3200/plain/s3://typefully-user-uploads/img/original/332740/308ae428-57ba-4d78-a117-9e28259f69eb.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/YghbpKh4iFHvc4qEqBtVvgCE3BQp4_OPQD50x18OWKA/s:3200/plain/s3://typefully-user-uploads/img/original/332740/308ae428-57ba-4d78-a117-9e28259f69eb.jpg" alt="It&#x27;s a family affair vol.4 のフライヤー" loading="lazy"></a><figcaption>🍏 11/3(火) It&#x27;s a family affair vol.4</figcaption></figure><figure class="slide" data-sec="4"><a href="https://d3e0luujhwn38u.cloudfront.net/resized/t0Ctkjk9esNTXUKNM7y7OaC9iyU9mFeM4ACMlEuo0yQ/s:3200/plain/s3://typefully-user-uploads/img/original/332740/b2fa8b34-9952-4464-83f3-6fb6dc1200f7.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/t0Ctkjk9esNTXUKNM7y7OaC9iyU9mFeM4ACMlEuo0yQ/s:3200/plain/s3://typefully-user-uploads/img/original/332740/b2fa8b34-9952-4464-83f3-6fb6dc1200f7.jpg" alt="MicroLlamaレコ発『System Debug Operator』 のフライヤー" loading="lazy"></a><figcaption>🫀 11/11(水) MicroLlamaレコ発『System Debug Operator』</figcaption></figure><figure class="slide" data-sec="4"><a href="https://d3e0luujhwn38u.cloudfront.net/resized/6JTTesw1Uh7hQ-Nhy9fetdJ4_PcncDWZUh64M1_3eOI/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9de47038-62cd-4009-a6c6-397563edc151.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/6JTTesw1Uh7hQ-Nhy9fetdJ4_PcncDWZUh64M1_3eOI/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9de47038-62cd-4009-a6c6-397563edc151.jpg" alt="Cliff Side Dream Dancing のフライヤー" loading="lazy"></a><figcaption>🎷 11/14(土) Cliff Side Dream Dancing</figcaption></figure><figure class="slide" data-sec="4"><a href="https://d3e0luujhwn38u.cloudfront.net/resized/B3i10eaUlabCutHe6oxR2jG_HZXcTRinnqvw9ev8NVw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/eef46eb1-7461-4684-9b37-c9dee25c8aed.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/B3i10eaUlabCutHe6oxR2jG_HZXcTRinnqvw9ev8NVw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/eef46eb1-7461-4684-9b37-c9dee25c8aed.jpg" alt="Soirée Chanson Concert #362 のフライヤー" loading="lazy"></a><figcaption>🫀 11/16(月) Soirée Chanson Concert #362</figcaption></figure><figure class="slide" data-sec="4"><a href="https://d3e0luujhwn38u.cloudfront.net/resized/8gKSXJ4vrkq2iBwrqNti-aEtSMtWz9RqUemXV_XqAco/s:3200/plain/s3://typefully-user-uploads/img/original/332740/5482c929-e90e-4770-a699-8599537f7eb5.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/8gKSXJ4vrkq2iBwrqNti-aEtSMtWz9RqUemXV_XqAco/s:3200/plain/s3://typefully-user-uploads/img/original/332740/5482c929-e90e-4770-a699-8599537f7eb5.jpg" alt="JON(犬)ともん土の妖しいフレンチポップサークル♪ のフライヤー" loading="lazy"></a><figcaption>🫀 11/17(火) JON(犬)ともん土の妖しいフレンチポップサークル♪</figcaption></figure><figure class="slide" data-sec="4"><a href="https://d3e0luujhwn38u.cloudfront.net/resized/ZUzeYt51FmlOi0dNXeB6ELRiY0-Mgug4RyvIyFrhJfY/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9b599b2b-c4a2-45a2-9f64-6b5d4d369c47.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/ZUzeYt51FmlOi0dNXeB6ELRiY0-Mgug4RyvIyFrhJfY/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9b599b2b-c4a2-45a2-9f64-6b5d4d369c47.jpg" alt="美里ウィンチェスターわんまん屋さん のフライヤー" loading="lazy"></a><figcaption>💎 11/22(日) 美里ウィンチェスターわんまん屋さん</figcaption></figure><figure class="slide" data-sec="4"><a href="https://d3e0luujhwn38u.cloudfront.net/resized/v2BIb2K7v10ht8uN1Gq2fCK5zk3cQiLyBDdznhvTCi0/s:3200/plain/s3://typefully-user-uploads/img/original/332740/a83ea171-58e3-4835-94a8-3e258a09c598.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/v2BIb2K7v10ht8uN1Gq2fCK5zk3cQiLyBDdznhvTCi0/s:3200/plain/s3://typefully-user-uploads/img/original/332740/a83ea171-58e3-4835-94a8-3e258a09c598.jpg" alt="胞擾ハーヴヱスト〜生命のニョッキを添えて〜 のフライヤー" loading="lazy"></a><figcaption>💎 11/30(月) 胞擾ハーヴヱスト〜生命のニョッキを添えて〜</figcaption></figure><figure class="slide" data-sec="4"><a href="https://d3e0luujhwn38u.cloudfront.net/resized/o7Pn1Di4JU0vjznM9HquJwMJWBdYQ6KIKe4To1M8oEw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/f9423a2e-a4a8-4d4c-8f84-aa335d9c8d70.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/o7Pn1Di4JU0vjznM9HquJwMJWBdYQ6KIKe4To1M8oEw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/f9423a2e-a4a8-4d4c-8f84-aa335d9c8d70.jpg" alt="織田島酒店で逢いまショー♪ のフライヤー" loading="lazy"></a><figcaption>🍏 12/12(土) 織田島酒店で逢いまショー♪</figcaption></figure><figure class="slide" data-sec="4"><a href="https://d3e0luujhwn38u.cloudfront.net/resized/zYgdXKyNTzwmikRVZ678iq-lDp2a0Xxb7QmULUoGnpo/s:3200/plain/s3://typefully-user-uploads/img/original/332740/c8da8f35-2986-4969-b059-4389369ed1c3.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/zYgdXKyNTzwmikRVZ678iq-lDp2a0Xxb7QmULUoGnpo/s:3200/plain/s3://typefully-user-uploads/img/original/332740/c8da8f35-2986-4969-b059-4389369ed1c3.jpg" alt="音楽事故物件 のフライヤー" loading="lazy"></a><figcaption>🍏 1/7(木) 音楽事故物件</figcaption></figure></div><div class="reel-ctrl"><button type="button" id="reel-prev" aria-label="前へ">◀</button><button type="button" id="reel-play">⏸ とめる</button><button type="button" id="reel-next" aria-label="次へ">▶</button></div><div class="dots" id="reel-dots"></div></div></div>
+    <div class="pane" data-pane="paper"><div class="reel-wrap"><div class="reel" id="reel" tabindex="0" aria-label="松たぬら新聞とフライヤー"><figure class="slide slide-paper" data-sec="8"><a class="js-zoom" data-ev="paper" aria-haspopup="dialog" href="assets/shinbun.png" target="_blank" rel="noopener"><img src="assets/shinbun.png" alt="松たぬら新聞。出演予定の一覧を文字でも開きます"></a><figcaption>📰 松たぬら新聞（タップで大きく）</figcaption></figure><figure class="slide" data-sec="4"><a class="js-zoom" data-ev="261031" aria-haspopup="dialog" href="https://d3e0luujhwn38u.cloudfront.net/resized/BJz6q7Fg1IRTq-DjZnP4UKdRkk6wmXWvtRqmzUpXy9c/s:3200/plain/s3://typefully-user-uploads/img/original/332740/fa5e6bc7-e1a8-47bb-b1fb-78203c4d4d5a.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/BJz6q7Fg1IRTq-DjZnP4UKdRkk6wmXWvtRqmzUpXy9c/s:3200/plain/s3://typefully-user-uploads/img/original/332740/fa5e6bc7-e1a8-47bb-b1fb-78203c4d4d5a.jpg" alt="路哲 PROTEST HALLOWEEN のフライヤー。10月31日(土)。新宿駅東南口広場。出演 路哲" loading="lazy"></a><figcaption>🥔 10/31(土) 路哲 PROTEST HALLOWEEN</figcaption></figure><figure class="slide" data-sec="4"><a class="js-zoom" data-ev="261103" aria-haspopup="dialog" href="https://d3e0luujhwn38u.cloudfront.net/resized/YghbpKh4iFHvc4qEqBtVvgCE3BQp4_OPQD50x18OWKA/s:3200/plain/s3://typefully-user-uploads/img/original/332740/308ae428-57ba-4d78-a117-9e28259f69eb.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/YghbpKh4iFHvc4qEqBtVvgCE3BQp4_OPQD50x18OWKA/s:3200/plain/s3://typefully-user-uploads/img/original/332740/308ae428-57ba-4d78-a117-9e28259f69eb.jpg" alt="It&#x27;s a family affair vol.4 のフライヤー。11月3日(火)。高円寺JIROKICHI。開場 18:30 / 開演 19:00。予約・当日とも¥3,000＋1ドリンクオーダー。出演 倉谷和宏／JabBee／THE GOLDEN CROWNS／スダッチ&amp;SPコネクション" loading="lazy"></a><figcaption>🍏 11/3(火) It&#x27;s a family affair vol.4</figcaption></figure><figure class="slide" data-sec="4"><a class="js-zoom" data-ev="261111" aria-haspopup="dialog" href="https://d3e0luujhwn38u.cloudfront.net/resized/t0Ctkjk9esNTXUKNM7y7OaC9iyU9mFeM4ACMlEuo0yQ/s:3200/plain/s3://typefully-user-uploads/img/original/332740/b2fa8b34-9952-4464-83f3-6fb6dc1200f7.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/t0Ctkjk9esNTXUKNM7y7OaC9iyU9mFeM4ACMlEuo0yQ/s:3200/plain/s3://typefully-user-uploads/img/original/332740/b2fa8b34-9952-4464-83f3-6fb6dc1200f7.jpg" alt="MicroLlamaレコ発『System Debug Operator』 のフライヤー。11月11日(水)。渋谷ラママ。開場 19:00 / 開演 19:30。前売・当日とも¥3,500（+1D）。出演 MicroLlama／松永天馬／山下メロのニュー文化／シャウワウ ほか（DJ：エリヌ＆マコピ）" loading="lazy"></a><figcaption>🫀 11/11(水) MicroLlamaレコ発『System Debug Operator』</figcaption></figure><figure class="slide" data-sec="4"><a class="js-zoom" data-ev="261114" aria-haspopup="dialog" href="https://d3e0luujhwn38u.cloudfront.net/resized/6JTTesw1Uh7hQ-Nhy9fetdJ4_PcncDWZUh64M1_3eOI/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9de47038-62cd-4009-a6c6-397563edc151.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/6JTTesw1Uh7hQ-Nhy9fetdJ4_PcncDWZUh64M1_3eOI/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9de47038-62cd-4009-a6c6-397563edc151.jpg" alt="Cliff Side Dream Dancing のフライヤー。11月14日(土)。横浜元町 クリフサイド。3,000円（テーブルチャージ・1ドリンク込）。出演 横濱ダンス・ビッグバンド（YDBB／2011年結成）で出演" loading="lazy"></a><figcaption>🎷 11/14(土) Cliff Side Dream Dancing</figcaption></figure><figure class="slide" data-sec="4"><a class="js-zoom" data-ev="261116" aria-haspopup="dialog" href="https://d3e0luujhwn38u.cloudfront.net/resized/B3i10eaUlabCutHe6oxR2jG_HZXcTRinnqvw9ev8NVw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/eef46eb1-7461-4684-9b37-c9dee25c8aed.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/B3i10eaUlabCutHe6oxR2jG_HZXcTRinnqvw9ev8NVw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/eef46eb1-7461-4684-9b37-c9dee25c8aed.jpg" alt="Soirée Chanson Concert #362 のフライヤー。11月16日(月)。高円寺 十話音。開場 18:00 / 開演 19:00。1stage¥1,000+2order（入場時のみ）。出演 ドビッチーまゆ／ソワレ／沙弥朗" loading="lazy"></a><figcaption>🫀 11/16(月) Soirée Chanson Concert #362</figcaption></figure><figure class="slide" data-sec="4"><a class="js-zoom" data-ev="261117" aria-haspopup="dialog" href="https://d3e0luujhwn38u.cloudfront.net/resized/8gKSXJ4vrkq2iBwrqNti-aEtSMtWz9RqUemXV_XqAco/s:3200/plain/s3://typefully-user-uploads/img/original/332740/5482c929-e90e-4770-a699-8599537f7eb5.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/8gKSXJ4vrkq2iBwrqNti-aEtSMtWz9RqUemXV_XqAco/s:3200/plain/s3://typefully-user-uploads/img/original/332740/5482c929-e90e-4770-a699-8599537f7eb5.jpg" alt="JON(犬)ともん土の妖しいフレンチポップサークル♪ のフライヤー。11月17日(火)。高円寺 十話音。予約¥3,000／当日¥3,500（+2order）。出演 大河もん土／ちんすこうルー［JON(犬)］／ドビッチーまゆ(piano)" loading="lazy"></a><figcaption>🫀 11/17(火) JON(犬)ともん土の妖しいフレンチポップサークル♪</figcaption></figure><figure class="slide" data-sec="4"><a class="js-zoom" data-ev="261122" aria-haspopup="dialog" href="https://d3e0luujhwn38u.cloudfront.net/resized/ZUzeYt51FmlOi0dNXeB6ELRiY0-Mgug4RyvIyFrhJfY/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9b599b2b-c4a2-45a2-9f64-6b5d4d369c47.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/ZUzeYt51FmlOi0dNXeB6ELRiY0-Mgug4RyvIyFrhJfY/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9b599b2b-c4a2-45a2-9f64-6b5d4d369c47.jpg" alt="美里ウィンチェスターわんまん屋さん のフライヤー。11月22日(日)。新宿 RedCloth。開場 17:30 / 開演 18:00。予約¥3,000／当日¥3,500（共に+1ドリンク代）。出演 美里ウィンチェスター（主役）／OA(1) たぬとわ／OA(2) なんちゃらアイドル" loading="lazy"></a><figcaption>💎 11/22(日) 美里ウィンチェスターわんまん屋さん</figcaption></figure><figure class="slide" data-sec="4"><a class="js-zoom" data-ev="261130" aria-haspopup="dialog" href="https://d3e0luujhwn38u.cloudfront.net/resized/v2BIb2K7v10ht8uN1Gq2fCK5zk3cQiLyBDdznhvTCi0/s:3200/plain/s3://typefully-user-uploads/img/original/332740/a83ea171-58e3-4835-94a8-3e258a09c598.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/v2BIb2K7v10ht8uN1Gq2fCK5zk3cQiLyBDdznhvTCi0/s:3200/plain/s3://typefully-user-uploads/img/original/332740/a83ea171-58e3-4835-94a8-3e258a09c598.jpg" alt="胞擾ハーヴヱスト〜生命のニョッキを添えて〜 のフライヤー。11月30日(月)。阿佐ヶ谷 mogumogu。開場 18:30 / 開演 19:00。料金¥2,500＋1ドリンク。出演 斉藤めい、パワーパーティ900" loading="lazy"></a><figcaption>💎 11/30(月) 胞擾ハーヴヱスト〜生命のニョッキを添えて〜</figcaption></figure><figure class="slide" data-sec="4"><a class="js-zoom" data-ev="261212" aria-haspopup="dialog" href="https://d3e0luujhwn38u.cloudfront.net/resized/o7Pn1Di4JU0vjznM9HquJwMJWBdYQ6KIKe4To1M8oEw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/f9423a2e-a4a8-4d4c-8f84-aa335d9c8d70.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/o7Pn1Di4JU0vjznM9HquJwMJWBdYQ6KIKe4To1M8oEw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/f9423a2e-a4a8-4d4c-8f84-aa335d9c8d70.jpg" alt="織田島酒店で逢いまショー♪ のフライヤー。12月12日(土)。国立・織田島酒店。開場 14:00 / 開演 14:30。料金¥2,500（飲食物の購入をお願いします）" loading="lazy"></a><figcaption>🍏 12/12(土) 織田島酒店で逢いまショー♪</figcaption></figure><figure class="slide" data-sec="4"><a class="js-zoom" data-ev="270107" aria-haspopup="dialog" href="https://d3e0luujhwn38u.cloudfront.net/resized/zYgdXKyNTzwmikRVZ678iq-lDp2a0Xxb7QmULUoGnpo/s:3200/plain/s3://typefully-user-uploads/img/original/332740/c8da8f35-2986-4969-b059-4389369ed1c3.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/zYgdXKyNTzwmikRVZ678iq-lDp2a0Xxb7QmULUoGnpo/s:3200/plain/s3://typefully-user-uploads/img/original/332740/c8da8f35-2986-4969-b059-4389369ed1c3.jpg" alt="音楽事故物件 のフライヤー。1月7日(木)。高円寺 ShowBoat。開場 18:30 / 開演 19:00。¥3,000（D別）。出演 ケキャール！／ミッドカンブリアンピリオド" loading="lazy"></a><figcaption>🍏 1/7(木) 音楽事故物件</figcaption></figure></div><div class="reel-ctrl"><button type="button" id="reel-prev" aria-label="前へ">◀</button><button type="button" id="reel-play">⏸ とめる</button><button type="button" id="reel-next" aria-label="次へ">▶</button></div><div class="dots" id="reel-dots"></div></div></div>
     <div class="pane" data-pane="cal"><div class="cal" id="cal"></div></div>
     <div class="pane" data-pane="list"><div class="grid">
 <article class="ev" style="--u:#c98a3a">
@@ -242,70 +259,70 @@ footer .links{background:var(--card);border-radius:var(--radius);padding:12px 16
   <div class="ev-body">
     <span class="chip">🥔 路哲</span>
     <h3>路哲 PROTEST HALLOWEEN</h3>
-    <p>📍 新宿駅東南口広場</p><p>🎤 路哲</p>
+    <p><span aria-hidden="true">📍</span> <span class="vh">会場：</span>新宿駅東南口広場</p><p><span aria-hidden="true">🎤</span> <span class="vh">出演：</span>路哲</p>
   </div>
-  <a class="ev-flyer" href="https://d3e0luujhwn38u.cloudfront.net/resized/BJz6q7Fg1IRTq-DjZnP4UKdRkk6wmXWvtRqmzUpXy9c/s:3200/plain/s3://typefully-user-uploads/img/original/332740/fa5e6bc7-e1a8-47bb-b1fb-78203c4d4d5a.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/BJz6q7Fg1IRTq-DjZnP4UKdRkk6wmXWvtRqmzUpXy9c/s:3200/plain/s3://typefully-user-uploads/img/original/332740/fa5e6bc7-e1a8-47bb-b1fb-78203c4d4d5a.jpg" alt="路哲 PROTEST HALLOWEEN のフライヤー" loading="lazy"></a>
+  <a class="ev-flyer js-zoom" data-ev="261031" aria-haspopup="dialog" href="https://d3e0luujhwn38u.cloudfront.net/resized/BJz6q7Fg1IRTq-DjZnP4UKdRkk6wmXWvtRqmzUpXy9c/s:3200/plain/s3://typefully-user-uploads/img/original/332740/fa5e6bc7-e1a8-47bb-b1fb-78203c4d4d5a.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/BJz6q7Fg1IRTq-DjZnP4UKdRkk6wmXWvtRqmzUpXy9c/s:3200/plain/s3://typefully-user-uploads/img/original/332740/fa5e6bc7-e1a8-47bb-b1fb-78203c4d4d5a.jpg" alt="路哲 PROTEST HALLOWEEN のフライヤーを大きく見る" loading="lazy"></a>
 </article>
 <article class="ev" style="--u:#3fa845">
   <div class="ev-date"><span class="ev-m">11月</span><span class="ev-d">3</span><span class="ev-w">火</span></div>
   <div class="ev-body">
     <span class="chip">🍏 リンゴリラ</span>
     <h3>It&#x27;s a family affair vol.4</h3>
-    <p>📍 高円寺JIROKICHI</p><p>⏰️ 開場 18:30 / 開演 19:00</p><p>🎫 予約・当日とも¥3,000＋1ドリンクオーダー</p><p>🎤 倉谷和宏／JabBee／THE GOLDEN CROWNS／スダッチ&amp;SPコネクション</p><a class="rv-btn" href="#sec-reserve" data-rv="261103">🎫 予約する</a>
+    <p><span aria-hidden="true">📍</span> <span class="vh">会場：</span>高円寺JIROKICHI</p><p><span aria-hidden="true">⏰️</span> <span class="vh">時間：</span>開場 18:30 / 開演 19:00</p><p><span aria-hidden="true">🎫</span> <span class="vh">料金：</span>予約・当日とも¥3,000＋1ドリンクオーダー</p><p><span aria-hidden="true">🎤</span> <span class="vh">出演：</span>倉谷和宏／JabBee／THE GOLDEN CROWNS／スダッチ&amp;SPコネクション</p><a class="rv-btn" href="#sec-reserve" data-rv="261103">🎫 予約する</a>
   </div>
-  <a class="ev-flyer" href="https://d3e0luujhwn38u.cloudfront.net/resized/YghbpKh4iFHvc4qEqBtVvgCE3BQp4_OPQD50x18OWKA/s:3200/plain/s3://typefully-user-uploads/img/original/332740/308ae428-57ba-4d78-a117-9e28259f69eb.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/YghbpKh4iFHvc4qEqBtVvgCE3BQp4_OPQD50x18OWKA/s:3200/plain/s3://typefully-user-uploads/img/original/332740/308ae428-57ba-4d78-a117-9e28259f69eb.jpg" alt="It&#x27;s a family affair vol.4 のフライヤー" loading="lazy"></a>
+  <a class="ev-flyer js-zoom" data-ev="261103" aria-haspopup="dialog" href="https://d3e0luujhwn38u.cloudfront.net/resized/YghbpKh4iFHvc4qEqBtVvgCE3BQp4_OPQD50x18OWKA/s:3200/plain/s3://typefully-user-uploads/img/original/332740/308ae428-57ba-4d78-a117-9e28259f69eb.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/YghbpKh4iFHvc4qEqBtVvgCE3BQp4_OPQD50x18OWKA/s:3200/plain/s3://typefully-user-uploads/img/original/332740/308ae428-57ba-4d78-a117-9e28259f69eb.jpg" alt="It&#x27;s a family affair vol.4 のフライヤーを大きく見る" loading="lazy"></a>
 </article>
 <article class="ev" style="--u:#e0485b">
   <div class="ev-date"><span class="ev-m">11月</span><span class="ev-d">11</span><span class="ev-w">水</span></div>
   <div class="ev-body">
     <span class="chip">🫀 ソロ</span>
     <h3>MicroLlamaレコ発『System Debug Operator』</h3>
-    <p>📍 渋谷ラママ</p><p>⏰️ 開場 19:00 / 開演 19:30</p><p>🎫 前売・当日とも¥3,500（+1D）</p><p>🎤 MicroLlama／松永天馬／山下メロのニュー文化／シャウワウ ほか（DJ：エリヌ＆マコピ）</p><a class="rv-btn" href="#sec-reserve" data-rv="261111">🎫 予約する</a>
+    <p><span aria-hidden="true">📍</span> <span class="vh">会場：</span>渋谷ラママ</p><p><span aria-hidden="true">⏰️</span> <span class="vh">時間：</span>開場 19:00 / 開演 19:30</p><p><span aria-hidden="true">🎫</span> <span class="vh">料金：</span>前売・当日とも¥3,500（+1D）</p><p><span aria-hidden="true">🎤</span> <span class="vh">出演：</span>MicroLlama／松永天馬／山下メロのニュー文化／シャウワウ ほか（DJ：エリヌ＆マコピ）</p><a class="rv-btn" href="#sec-reserve" data-rv="261111">🎫 予約する</a>
   </div>
-  <a class="ev-flyer" href="https://d3e0luujhwn38u.cloudfront.net/resized/t0Ctkjk9esNTXUKNM7y7OaC9iyU9mFeM4ACMlEuo0yQ/s:3200/plain/s3://typefully-user-uploads/img/original/332740/b2fa8b34-9952-4464-83f3-6fb6dc1200f7.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/t0Ctkjk9esNTXUKNM7y7OaC9iyU9mFeM4ACMlEuo0yQ/s:3200/plain/s3://typefully-user-uploads/img/original/332740/b2fa8b34-9952-4464-83f3-6fb6dc1200f7.jpg" alt="MicroLlamaレコ発『System Debug Operator』 のフライヤー" loading="lazy"></a>
+  <a class="ev-flyer js-zoom" data-ev="261111" aria-haspopup="dialog" href="https://d3e0luujhwn38u.cloudfront.net/resized/t0Ctkjk9esNTXUKNM7y7OaC9iyU9mFeM4ACMlEuo0yQ/s:3200/plain/s3://typefully-user-uploads/img/original/332740/b2fa8b34-9952-4464-83f3-6fb6dc1200f7.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/t0Ctkjk9esNTXUKNM7y7OaC9iyU9mFeM4ACMlEuo0yQ/s:3200/plain/s3://typefully-user-uploads/img/original/332740/b2fa8b34-9952-4464-83f3-6fb6dc1200f7.jpg" alt="MicroLlamaレコ発『System Debug Operator』 のフライヤーを大きく見る" loading="lazy"></a>
 </article>
 <article class="ev" style="--u:#d9a21b">
   <div class="ev-date"><span class="ev-m">11月</span><span class="ev-d">14</span><span class="ev-w">土</span></div>
   <div class="ev-body">
     <span class="chip">🎷 ビッグバンド</span>
     <h3>Cliff Side Dream Dancing</h3>
-    <p>📍 横浜元町 クリフサイド</p><p>🎫 3,000円（テーブルチャージ・1ドリンク込）</p><p>🎤 横濱ダンス・ビッグバンド（YDBB／2011年結成）で出演</p><a class="rv-btn" href="#sec-reserve" data-rv="261114">🎫 予約する</a>
+    <p><span aria-hidden="true">📍</span> <span class="vh">会場：</span>横浜元町 クリフサイド</p><p><span aria-hidden="true">🎫</span> <span class="vh">料金：</span>3,000円（テーブルチャージ・1ドリンク込）</p><p><span aria-hidden="true">🎤</span> <span class="vh">出演：</span>横濱ダンス・ビッグバンド（YDBB／2011年結成）で出演</p><a class="rv-btn" href="#sec-reserve" data-rv="261114">🎫 予約する</a>
   </div>
-  <a class="ev-flyer" href="https://d3e0luujhwn38u.cloudfront.net/resized/6JTTesw1Uh7hQ-Nhy9fetdJ4_PcncDWZUh64M1_3eOI/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9de47038-62cd-4009-a6c6-397563edc151.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/6JTTesw1Uh7hQ-Nhy9fetdJ4_PcncDWZUh64M1_3eOI/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9de47038-62cd-4009-a6c6-397563edc151.jpg" alt="Cliff Side Dream Dancing のフライヤー" loading="lazy"></a>
+  <a class="ev-flyer js-zoom" data-ev="261114" aria-haspopup="dialog" href="https://d3e0luujhwn38u.cloudfront.net/resized/6JTTesw1Uh7hQ-Nhy9fetdJ4_PcncDWZUh64M1_3eOI/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9de47038-62cd-4009-a6c6-397563edc151.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/6JTTesw1Uh7hQ-Nhy9fetdJ4_PcncDWZUh64M1_3eOI/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9de47038-62cd-4009-a6c6-397563edc151.jpg" alt="Cliff Side Dream Dancing のフライヤーを大きく見る" loading="lazy"></a>
 </article>
 <article class="ev" style="--u:#e0485b">
   <div class="ev-date"><span class="ev-m">11月</span><span class="ev-d">16</span><span class="ev-w">月</span></div>
   <div class="ev-body">
     <span class="chip">🫀 ソロ</span>
     <h3>Soirée Chanson Concert #362</h3>
-    <p>📍 高円寺 十話音</p><p>⏰️ 開場 18:00 / 開演 19:00</p><p>🎫 1stage¥1,000+2order（入場時のみ）</p><p>🎤 ドビッチーまゆ／ソワレ／沙弥朗</p><a class="rv-btn" href="#sec-reserve" data-rv="261116">🎫 予約する</a>
+    <p><span aria-hidden="true">📍</span> <span class="vh">会場：</span>高円寺 十話音</p><p><span aria-hidden="true">⏰️</span> <span class="vh">時間：</span>開場 18:00 / 開演 19:00</p><p><span aria-hidden="true">🎫</span> <span class="vh">料金：</span>1stage¥1,000+2order（入場時のみ）</p><p><span aria-hidden="true">🎤</span> <span class="vh">出演：</span>ドビッチーまゆ／ソワレ／沙弥朗</p><a class="rv-btn" href="#sec-reserve" data-rv="261116">🎫 予約する</a>
   </div>
-  <a class="ev-flyer" href="https://d3e0luujhwn38u.cloudfront.net/resized/B3i10eaUlabCutHe6oxR2jG_HZXcTRinnqvw9ev8NVw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/eef46eb1-7461-4684-9b37-c9dee25c8aed.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/B3i10eaUlabCutHe6oxR2jG_HZXcTRinnqvw9ev8NVw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/eef46eb1-7461-4684-9b37-c9dee25c8aed.jpg" alt="Soirée Chanson Concert #362 のフライヤー" loading="lazy"></a>
+  <a class="ev-flyer js-zoom" data-ev="261116" aria-haspopup="dialog" href="https://d3e0luujhwn38u.cloudfront.net/resized/B3i10eaUlabCutHe6oxR2jG_HZXcTRinnqvw9ev8NVw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/eef46eb1-7461-4684-9b37-c9dee25c8aed.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/B3i10eaUlabCutHe6oxR2jG_HZXcTRinnqvw9ev8NVw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/eef46eb1-7461-4684-9b37-c9dee25c8aed.jpg" alt="Soirée Chanson Concert #362 のフライヤーを大きく見る" loading="lazy"></a>
 </article>
 <article class="ev" style="--u:#e0485b">
   <div class="ev-date"><span class="ev-m">11月</span><span class="ev-d">17</span><span class="ev-w">火</span></div>
   <div class="ev-body">
     <span class="chip">🫀 ソロ</span>
     <h3>JON(犬)ともん土の妖しいフレンチポップサークル♪</h3>
-    <p>📍 高円寺 十話音</p><p>🎫 予約¥3,000／当日¥3,500（+2order）</p><p>🎤 大河もん土／ちんすこうルー［JON(犬)］／ドビッチーまゆ(piano)</p><a class="rv-btn" href="#sec-reserve" data-rv="261117">🎫 予約する</a>
+    <p><span aria-hidden="true">📍</span> <span class="vh">会場：</span>高円寺 十話音</p><p><span aria-hidden="true">🎫</span> <span class="vh">料金：</span>予約¥3,000／当日¥3,500（+2order）</p><p><span aria-hidden="true">🎤</span> <span class="vh">出演：</span>大河もん土／ちんすこうルー［JON(犬)］／ドビッチーまゆ(piano)</p><a class="rv-btn" href="#sec-reserve" data-rv="261117">🎫 予約する</a>
   </div>
-  <a class="ev-flyer" href="https://d3e0luujhwn38u.cloudfront.net/resized/8gKSXJ4vrkq2iBwrqNti-aEtSMtWz9RqUemXV_XqAco/s:3200/plain/s3://typefully-user-uploads/img/original/332740/5482c929-e90e-4770-a699-8599537f7eb5.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/8gKSXJ4vrkq2iBwrqNti-aEtSMtWz9RqUemXV_XqAco/s:3200/plain/s3://typefully-user-uploads/img/original/332740/5482c929-e90e-4770-a699-8599537f7eb5.jpg" alt="JON(犬)ともん土の妖しいフレンチポップサークル♪ のフライヤー" loading="lazy"></a>
+  <a class="ev-flyer js-zoom" data-ev="261117" aria-haspopup="dialog" href="https://d3e0luujhwn38u.cloudfront.net/resized/8gKSXJ4vrkq2iBwrqNti-aEtSMtWz9RqUemXV_XqAco/s:3200/plain/s3://typefully-user-uploads/img/original/332740/5482c929-e90e-4770-a699-8599537f7eb5.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/8gKSXJ4vrkq2iBwrqNti-aEtSMtWz9RqUemXV_XqAco/s:3200/plain/s3://typefully-user-uploads/img/original/332740/5482c929-e90e-4770-a699-8599537f7eb5.jpg" alt="JON(犬)ともん土の妖しいフレンチポップサークル♪ のフライヤーを大きく見る" loading="lazy"></a>
 </article>
 <article class="ev" style="--u:#8e5cff">
   <div class="ev-date"><span class="ev-m">11月</span><span class="ev-d">22</span><span class="ev-w">日</span></div>
   <div class="ev-body">
     <span class="chip">💎 たぬとわ</span>
     <h3>美里ウィンチェスターわんまん屋さん</h3>
-    <p>📍 新宿 RedCloth</p><p>⏰️ 開場 17:30 / 開演 18:00</p><p>🎫 予約¥3,000／当日¥3,500（共に+1ドリンク代）</p><p>🎤 美里ウィンチェスター（主役）／OA(1) たぬとわ／OA(2) なんちゃらアイドル</p><a class="rv-btn" href="#sec-reserve" data-rv="261122">🎫 予約する</a>
+    <p><span aria-hidden="true">📍</span> <span class="vh">会場：</span>新宿 RedCloth</p><p><span aria-hidden="true">⏰️</span> <span class="vh">時間：</span>開場 17:30 / 開演 18:00</p><p><span aria-hidden="true">🎫</span> <span class="vh">料金：</span>予約¥3,000／当日¥3,500（共に+1ドリンク代）</p><p><span aria-hidden="true">🎤</span> <span class="vh">出演：</span>美里ウィンチェスター（主役）／OA(1) たぬとわ／OA(2) なんちゃらアイドル</p><a class="rv-btn" href="#sec-reserve" data-rv="261122">🎫 予約する</a>
   </div>
-  <a class="ev-flyer" href="https://d3e0luujhwn38u.cloudfront.net/resized/ZUzeYt51FmlOi0dNXeB6ELRiY0-Mgug4RyvIyFrhJfY/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9b599b2b-c4a2-45a2-9f64-6b5d4d369c47.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/ZUzeYt51FmlOi0dNXeB6ELRiY0-Mgug4RyvIyFrhJfY/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9b599b2b-c4a2-45a2-9f64-6b5d4d369c47.jpg" alt="美里ウィンチェスターわんまん屋さん のフライヤー" loading="lazy"></a>
+  <a class="ev-flyer js-zoom" data-ev="261122" aria-haspopup="dialog" href="https://d3e0luujhwn38u.cloudfront.net/resized/ZUzeYt51FmlOi0dNXeB6ELRiY0-Mgug4RyvIyFrhJfY/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9b599b2b-c4a2-45a2-9f64-6b5d4d369c47.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/ZUzeYt51FmlOi0dNXeB6ELRiY0-Mgug4RyvIyFrhJfY/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9b599b2b-c4a2-45a2-9f64-6b5d4d369c47.jpg" alt="美里ウィンチェスターわんまん屋さん のフライヤーを大きく見る" loading="lazy"></a>
 </article>
 <article class="ev ev-tbd" style="--u:#c98a3a">
   <div class="ev-date"><span class="ev-m">11月</span><span class="ev-d">28</span><span class="ev-w">土</span></div>
   <div class="ev-body">
     <span class="chip">🥔 路哲</span>
     <h3>なんかある！（詳細は後日）</h3>
-    <p>📍 宇都宮</p>
+    <p><span aria-hidden="true">📍</span> <span class="vh">会場：</span>宇都宮</p>
   </div>
   
 </article>
@@ -314,9 +331,9 @@ footer .links{background:var(--card);border-radius:var(--radius);padding:12px 16
   <div class="ev-body">
     <span class="chip">💎 たぬとわ</span>
     <h3>胞擾ハーヴヱスト〜生命のニョッキを添えて〜</h3>
-    <p>📍 阿佐ヶ谷 mogumogu</p><p>⏰️ 開場 18:30 / 開演 19:00</p><p>🎫 料金¥2,500＋1ドリンク</p><p>🎤 斉藤めい、パワーパーティ900</p><a class="rv-btn" href="#sec-reserve" data-rv="261130">🎫 予約する</a>
+    <p><span aria-hidden="true">📍</span> <span class="vh">会場：</span>阿佐ヶ谷 mogumogu</p><p><span aria-hidden="true">⏰️</span> <span class="vh">時間：</span>開場 18:30 / 開演 19:00</p><p><span aria-hidden="true">🎫</span> <span class="vh">料金：</span>料金¥2,500＋1ドリンク</p><p><span aria-hidden="true">🎤</span> <span class="vh">出演：</span>斉藤めい、パワーパーティ900</p><a class="rv-btn" href="#sec-reserve" data-rv="261130">🎫 予約する</a>
   </div>
-  <a class="ev-flyer" href="https://d3e0luujhwn38u.cloudfront.net/resized/v2BIb2K7v10ht8uN1Gq2fCK5zk3cQiLyBDdznhvTCi0/s:3200/plain/s3://typefully-user-uploads/img/original/332740/a83ea171-58e3-4835-94a8-3e258a09c598.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/v2BIb2K7v10ht8uN1Gq2fCK5zk3cQiLyBDdznhvTCi0/s:3200/plain/s3://typefully-user-uploads/img/original/332740/a83ea171-58e3-4835-94a8-3e258a09c598.jpg" alt="胞擾ハーヴヱスト〜生命のニョッキを添えて〜 のフライヤー" loading="lazy"></a>
+  <a class="ev-flyer js-zoom" data-ev="261130" aria-haspopup="dialog" href="https://d3e0luujhwn38u.cloudfront.net/resized/v2BIb2K7v10ht8uN1Gq2fCK5zk3cQiLyBDdznhvTCi0/s:3200/plain/s3://typefully-user-uploads/img/original/332740/a83ea171-58e3-4835-94a8-3e258a09c598.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/v2BIb2K7v10ht8uN1Gq2fCK5zk3cQiLyBDdznhvTCi0/s:3200/plain/s3://typefully-user-uploads/img/original/332740/a83ea171-58e3-4835-94a8-3e258a09c598.jpg" alt="胞擾ハーヴヱスト〜生命のニョッキを添えて〜 のフライヤーを大きく見る" loading="lazy"></a>
 </article>
 <article class="ev ev-tbd" style="--u:#8e5cff">
   <div class="ev-date"><span class="ev-m">12月</span><span class="ev-d">4</span><span class="ev-w">金</span></div>
@@ -332,16 +349,16 @@ footer .links{background:var(--card);border-radius:var(--radius);padding:12px 16
   <div class="ev-body">
     <span class="chip">🍏 リンゴリラ</span>
     <h3>織田島酒店で逢いまショー♪</h3>
-    <p>📍 国立・織田島酒店</p><p>⏰️ 開場 14:00 / 開演 14:30</p><p>🎫 料金¥2,500（飲食物の購入をお願いします）</p><a class="rv-btn" href="#sec-reserve" data-rv="261212">🎫 予約する</a>
+    <p><span aria-hidden="true">📍</span> <span class="vh">会場：</span>国立・織田島酒店</p><p><span aria-hidden="true">⏰️</span> <span class="vh">時間：</span>開場 14:00 / 開演 14:30</p><p><span aria-hidden="true">🎫</span> <span class="vh">料金：</span>料金¥2,500（飲食物の購入をお願いします）</p><a class="rv-btn" href="#sec-reserve" data-rv="261212">🎫 予約する</a>
   </div>
-  <a class="ev-flyer" href="https://d3e0luujhwn38u.cloudfront.net/resized/o7Pn1Di4JU0vjznM9HquJwMJWBdYQ6KIKe4To1M8oEw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/f9423a2e-a4a8-4d4c-8f84-aa335d9c8d70.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/o7Pn1Di4JU0vjznM9HquJwMJWBdYQ6KIKe4To1M8oEw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/f9423a2e-a4a8-4d4c-8f84-aa335d9c8d70.jpg" alt="織田島酒店で逢いまショー♪ のフライヤー" loading="lazy"></a>
+  <a class="ev-flyer js-zoom" data-ev="261212" aria-haspopup="dialog" href="https://d3e0luujhwn38u.cloudfront.net/resized/o7Pn1Di4JU0vjznM9HquJwMJWBdYQ6KIKe4To1M8oEw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/f9423a2e-a4a8-4d4c-8f84-aa335d9c8d70.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/o7Pn1Di4JU0vjznM9HquJwMJWBdYQ6KIKe4To1M8oEw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/f9423a2e-a4a8-4d4c-8f84-aa335d9c8d70.jpg" alt="織田島酒店で逢いまショー♪ のフライヤーを大きく見る" loading="lazy"></a>
 </article>
 <article class="ev ev-tbd" style="--u:#6b7280">
   <div class="ev-date"><span class="ev-m">12月</span><span class="ev-d">27</span><span class="ev-w">日</span></div>
   <div class="ev-body">
     <span class="chip">🔧 ムジカPA</span>
     <h3>なんかある！（詳細は後日）</h3>
-    <p>📍 日暮里ムジカ</p>
+    <p><span aria-hidden="true">📍</span> <span class="vh">会場：</span>日暮里ムジカ</p>
   </div>
   
 </article>
@@ -350,9 +367,9 @@ footer .links{background:var(--card);border-radius:var(--radius);padding:12px 16
   <div class="ev-body">
     <span class="chip">🍏 リンゴリラ</span>
     <h3>音楽事故物件</h3>
-    <p>📍 高円寺 ShowBoat</p><p>⏰️ 開場 18:30 / 開演 19:00</p><p>🎫 ¥3,000（D別）</p><p>🎤 ケキャール！／ミッドカンブリアンピリオド</p><a class="rv-btn" href="#sec-reserve" data-rv="270107">🎫 予約する</a>
+    <p><span aria-hidden="true">📍</span> <span class="vh">会場：</span>高円寺 ShowBoat</p><p><span aria-hidden="true">⏰️</span> <span class="vh">時間：</span>開場 18:30 / 開演 19:00</p><p><span aria-hidden="true">🎫</span> <span class="vh">料金：</span>¥3,000（D別）</p><p><span aria-hidden="true">🎤</span> <span class="vh">出演：</span>ケキャール！／ミッドカンブリアンピリオド</p><a class="rv-btn" href="#sec-reserve" data-rv="270107">🎫 予約する</a>
   </div>
-  <a class="ev-flyer" href="https://d3e0luujhwn38u.cloudfront.net/resized/zYgdXKyNTzwmikRVZ678iq-lDp2a0Xxb7QmULUoGnpo/s:3200/plain/s3://typefully-user-uploads/img/original/332740/c8da8f35-2986-4969-b059-4389369ed1c3.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/zYgdXKyNTzwmikRVZ678iq-lDp2a0Xxb7QmULUoGnpo/s:3200/plain/s3://typefully-user-uploads/img/original/332740/c8da8f35-2986-4969-b059-4389369ed1c3.jpg" alt="音楽事故物件 のフライヤー" loading="lazy"></a>
+  <a class="ev-flyer js-zoom" data-ev="270107" aria-haspopup="dialog" href="https://d3e0luujhwn38u.cloudfront.net/resized/zYgdXKyNTzwmikRVZ678iq-lDp2a0Xxb7QmULUoGnpo/s:3200/plain/s3://typefully-user-uploads/img/original/332740/c8da8f35-2986-4969-b059-4389369ed1c3.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/zYgdXKyNTzwmikRVZ678iq-lDp2a0Xxb7QmULUoGnpo/s:3200/plain/s3://typefully-user-uploads/img/original/332740/c8da8f35-2986-4969-b059-4389369ed1c3.jpg" alt="音楽事故物件 のフライヤーを大きく見る" loading="lazy"></a>
 </article></div></div>
   </section>
 
@@ -431,7 +448,7 @@ against racism &amp; fascism</p>
   <p>文学と音楽、ときどき猫。
 詩人葛原りょうプロデュースのBARとイベントスペース。
 日暮里駅北改札西出口より徒歩3分</p>
-  <div class="links"><a href="https://www.instagram.com/kobomusica/" target="_blank" rel="noopener">Instagram</a> <a href="https://x.com/koubomusica" target="_blank" rel="noopener">X</a> <a href="https://www.facebook.com/koubomusica" target="_blank" rel="noopener">Facebook</a></div>
+  <div class="links"><a href="https://www.instagram.com/kobomusica/" target="_blank" rel="noopener">Instagram</a> <a href="https://x.com/koubomusica" target="_blank" rel="noopener">X</a> <a href="https://www.facebook.com/koubomusica" target="_blank" rel="noopener">Facebook</a> <a href="https://jorte.com/calendar/id/63f8adcf9937e21cb9dde886" target="_blank" rel="noopener">スケジュール</a></div>
 </article></div>
     <p class="muted scroll-hint">← よこにスクロール →</p>
   </section>
@@ -447,6 +464,14 @@ against racism &amp; fascism</p>
   予定の更新: 2026-10-30 20:08 ／ © 松たぬら ／ <span id="icon-credit">アイコン写真: 日暮鍵心</span>
 </footer>
 </div>
+<dialog id="zoom" aria-labelledby="zoom-title">
+  <button type="button" class="zoom-x" aria-label="閉じる">✕</button>
+  <div class="zoom-body">
+    <div class="zoom-img"><img alt=""></div>
+    <div class="zoom-info"></div>
+  </div>
+</dialog>
+<p class="vh" role="status" id="cal-status"></p>
 <script type="application/json" id="cal-data">[{"id": "261031", "date": "2026-10-31", "m": 10, "d": 31, "dow": "土", "unit": "potato", "label": "路哲", "emoji": "🥔", "color": "#c98a3a", "title": "路哲 PROTEST HALLOWEEN", "confirmed": true, "venue": "新宿駅東南口広場", "when": "", "ticket": "", "guests": "路哲", "flyer": "https://d3e0luujhwn38u.cloudfront.net/resized/BJz6q7Fg1IRTq-DjZnP4UKdRkk6wmXWvtRqmzUpXy9c/s:3200/plain/s3://typefully-user-uploads/img/original/332740/fa5e6bc7-e1a8-47bb-b1fb-78203c4d4d5a.jpg", "reservable": false}, {"id": "261103", "date": "2026-11-03", "m": 11, "d": 3, "dow": "火", "unit": "apple", "label": "リンゴリラ", "emoji": "🍏", "color": "#3fa845", "title": "It's a family affair vol.4", "confirmed": true, "venue": "高円寺JIROKICHI", "when": "開場 18:30 / 開演 19:00", "ticket": "予約・当日とも¥3,000＋1ドリンクオーダー", "guests": "倉谷和宏／JabBee／THE GOLDEN CROWNS／スダッチ&SPコネクション", "flyer": "https://d3e0luujhwn38u.cloudfront.net/resized/YghbpKh4iFHvc4qEqBtVvgCE3BQp4_OPQD50x18OWKA/s:3200/plain/s3://typefully-user-uploads/img/original/332740/308ae428-57ba-4d78-a117-9e28259f69eb.jpg", "reservable": true}, {"id": "261111", "date": "2026-11-11", "m": 11, "d": 11, "dow": "水", "unit": "heartorgan", "label": "ソロ", "emoji": "🫀", "color": "#e0485b", "title": "MicroLlamaレコ発『System Debug Operator』", "confirmed": true, "venue": "渋谷ラママ", "when": "開場 19:00 / 開演 19:30", "ticket": "前売・当日とも¥3,500（+1D）", "guests": "MicroLlama／松永天馬／山下メロのニュー文化／シャウワウ ほか（DJ：エリヌ＆マコピ）", "flyer": "https://d3e0luujhwn38u.cloudfront.net/resized/t0Ctkjk9esNTXUKNM7y7OaC9iyU9mFeM4ACMlEuo0yQ/s:3200/plain/s3://typefully-user-uploads/img/original/332740/b2fa8b34-9952-4464-83f3-6fb6dc1200f7.jpg", "reservable": true}, {"id": "261114", "date": "2026-11-14", "m": 11, "d": 14, "dow": "土", "unit": "sax", "label": "ビッグバンド", "emoji": "🎷", "color": "#d9a21b", "title": "Cliff Side Dream Dancing", "confirmed": true, "venue": "横浜元町 クリフサイド", "when": "", "ticket": "3,000円（テーブルチャージ・1ドリンク込）", "guests": "横濱ダンス・ビッグバンド（YDBB／2011年結成）で出演", "flyer": "https://d3e0luujhwn38u.cloudfront.net/resized/6JTTesw1Uh7hQ-Nhy9fetdJ4_PcncDWZUh64M1_3eOI/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9de47038-62cd-4009-a6c6-397563edc151.jpg", "reservable": true}, {"id": "261116", "date": "2026-11-16", "m": 11, "d": 16, "dow": "月", "unit": "heartorgan", "label": "ソロ", "emoji": "🫀", "color": "#e0485b", "title": "Soirée Chanson Concert #362", "confirmed": true, "venue": "高円寺 十話音", "when": "開場 18:00 / 開演 19:00", "ticket": "1stage¥1,000+2order（入場時のみ）", "guests": "ドビッチーまゆ／ソワレ／沙弥朗", "flyer": "https://d3e0luujhwn38u.cloudfront.net/resized/B3i10eaUlabCutHe6oxR2jG_HZXcTRinnqvw9ev8NVw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/eef46eb1-7461-4684-9b37-c9dee25c8aed.jpg", "reservable": true}, {"id": "261117", "date": "2026-11-17", "m": 11, "d": 17, "dow": "火", "unit": "heartorgan", "label": "ソロ", "emoji": "🫀", "color": "#e0485b", "title": "JON(犬)ともん土の妖しいフレンチポップサークル♪", "confirmed": true, "venue": "高円寺 十話音", "when": "", "ticket": "予約¥3,000／当日¥3,500（+2order）", "guests": "大河もん土／ちんすこうルー［JON(犬)］／ドビッチーまゆ(piano)", "flyer": "https://d3e0luujhwn38u.cloudfront.net/resized/8gKSXJ4vrkq2iBwrqNti-aEtSMtWz9RqUemXV_XqAco/s:3200/plain/s3://typefully-user-uploads/img/original/332740/5482c929-e90e-4770-a699-8599537f7eb5.jpg", "reservable": true}, {"id": "261122", "date": "2026-11-22", "m": 11, "d": 22, "dow": "日", "unit": "gem", "label": "たぬとわ", "emoji": "💎", "color": "#8e5cff", "title": "美里ウィンチェスターわんまん屋さん", "confirmed": true, "venue": "新宿 RedCloth", "when": "開場 17:30 / 開演 18:00", "ticket": "予約¥3,000／当日¥3,500（共に+1ドリンク代）", "guests": "美里ウィンチェスター（主役）／OA(1) たぬとわ／OA(2) なんちゃらアイドル", "flyer": "https://d3e0luujhwn38u.cloudfront.net/resized/ZUzeYt51FmlOi0dNXeB6ELRiY0-Mgug4RyvIyFrhJfY/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9b599b2b-c4a2-45a2-9f64-6b5d4d369c47.jpg", "reservable": true}, {"id": "261128", "date": "2026-11-28", "m": 11, "d": 28, "dow": "土", "unit": "potato", "label": "路哲", "emoji": "🥔", "color": "#c98a3a", "title": "なんかある！（詳細は後日）", "confirmed": false, "venue": "宇都宮", "when": "", "ticket": "", "guests": "", "flyer": "", "reservable": false}, {"id": "261130", "date": "2026-11-30", "m": 11, "d": 30, "dow": "月", "unit": "gem", "label": "たぬとわ", "emoji": "💎", "color": "#8e5cff", "title": "胞擾ハーヴヱスト〜生命のニョッキを添えて〜", "confirmed": true, "venue": "阿佐ヶ谷 mogumogu", "when": "開場 18:30 / 開演 19:00", "ticket": "料金¥2,500＋1ドリンク", "guests": "斉藤めい、パワーパーティ900", "flyer": "https://d3e0luujhwn38u.cloudfront.net/resized/v2BIb2K7v10ht8uN1Gq2fCK5zk3cQiLyBDdznhvTCi0/s:3200/plain/s3://typefully-user-uploads/img/original/332740/a83ea171-58e3-4835-94a8-3e258a09c598.jpg", "reservable": true}, {"id": "261204", "date": "2026-12-04", "m": 12, "d": 4, "dow": "金", "unit": "gem", "label": "たぬとわ", "emoji": "💎", "color": "#8e5cff", "title": "なんかある！（詳細は後日）", "confirmed": false, "venue": "", "when": "", "ticket": "", "guests": "", "flyer": "", "reservable": false}, {"id": "261212", "date": "2026-12-12", "m": 12, "d": 12, "dow": "土", "unit": "apple", "label": "リンゴリラ", "emoji": "🍏", "color": "#3fa845", "title": "織田島酒店で逢いまショー♪", "confirmed": true, "venue": "国立・織田島酒店", "when": "開場 14:00 / 開演 14:30", "ticket": "料金¥2,500（飲食物の購入をお願いします）", "guests": "", "flyer": "https://d3e0luujhwn38u.cloudfront.net/resized/o7Pn1Di4JU0vjznM9HquJwMJWBdYQ6KIKe4To1M8oEw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/f9423a2e-a4a8-4d4c-8f84-aa335d9c8d70.jpg", "reservable": true}, {"id": "261227", "date": "2026-12-27", "m": 12, "d": 27, "dow": "日", "unit": "wrench", "label": "ムジカPA", "emoji": "🔧", "color": "#6b7280", "title": "なんかある！（詳細は後日）", "confirmed": false, "venue": "日暮里ムジカ", "when": "", "ticket": "", "guests": "", "flyer": "", "reservable": false}, {"id": "270107", "date": "2027-01-07", "m": 1, "d": 7, "dow": "木", "unit": "apple", "label": "リンゴリラ", "emoji": "🍏", "color": "#3fa845", "title": "音楽事故物件", "confirmed": true, "venue": "高円寺 ShowBoat", "when": "開場 18:30 / 開演 19:00", "ticket": "¥3,000（D別）", "guests": "ケキャール！／ミッドカンブリアンピリオド", "flyer": "https://d3e0luujhwn38u.cloudfront.net/resized/zYgdXKyNTzwmikRVZ678iq-lDp2a0Xxb7QmULUoGnpo/s:3200/plain/s3://typefully-user-uploads/img/original/332740/c8da8f35-2986-4969-b059-4389369ed1c3.jpg", "reservable": true}]</script>
 <script>
 (function(){
@@ -469,7 +494,7 @@ against racism &amp; fascism</p>
       r.scrollTo({left:s.offsetLeft-(r.clientWidth-s.offsetWidth)/2,behavior:'smooth'});mark();}
     function tick(){clearTimeout(timer);if(!playing)return;
       timer=setTimeout(function(){
-        if(playing&&visible&&active&&!document.hidden&&Date.now()>hold)go(i+1);
+        var zz=document.getElementById('zoom');if(playing&&visible&&active&&!document.hidden&&Date.now()>hold&&!(zz&&zz.open))go(i+1);
         tick();},(parseFloat(slides[i].getAttribute('data-sec'))||4)*1000);}
     function setPlay(p){playing=p;play.textContent=p?'⏸ とめる':'▶ ながす';tick();}
     function touch(){hold=Date.now()+7000}
@@ -500,22 +525,63 @@ against racism &amp; fascism</p>
     var DOW=['にち','げつ','か','すい','もく','きん','ど'];
     function detail(){if(!sel||!byDay[sel])return '<p class="cal-none">★の日を押すと中身が出るよ</p>';
       return byDay[sel].map(function(e){var h='<span class="chip" style="--u:'+E(e.color)+'">'+e.emoji+' '+E(e.label)+'</span><h3>'+e.m+'/'+e.d+'('+E(e.dow)+') '+E(e.title)+'</h3>';
-        if(e.venue)h+='<p>📍 '+E(e.venue)+'</p>';if(e.when)h+='<p>⏰️ '+E(e.when)+'</p>';if(e.ticket)h+='<p>🎫 '+E(e.ticket)+'</p>';
+        function row(em,lb,t){return t?'<p><span aria-hidden="true">'+em+'</span> <span class="vh">'+lb+'：</span>'+E(t)+'</p>':''}
+        h+=row('📍','会場',e.venue)+row('⏰️','時間',e.when)+row('🎫','料金',e.ticket)+row('🎤','出演',e.guests);
         if(e.reservable)h+='<a class="rv-btn" href="#sec-reserve" data-rv="'+E(e.id)+'">🎫 予約する</a>';
-        if(e.flyer)h+='<a href="'+E(e.flyer)+'" target="_blank" rel="noopener"><img src="'+E(e.flyer)+'" alt="フライヤー"></a>';return h}).join('');}
+        if(e.flyer)h+='<a class="js-zoom" data-ev="'+E(e.id)+'" aria-haspopup="dialog" href="'+E(e.flyer)+'" target="_blank" rel="noopener"><img src="'+E(e.flyer)+'" alt="'+E(e.title)+' のフライヤーを大きく見る"></a>';return h}).join('');}
     function render(){var y=Math.floor(cur/12),m=cur%12,first=new Date(y,m,1).getDay(),days=new Date(y,m+1,0).getDate();
       var h='<div class="cal-head"><button type="button" id="cal-p" aria-label="前の月"'+(cur<=minM?' disabled':'')+'>◀</button><span class="cal-title">'+y+'年'+(m+1)+'月</span><button type="button" id="cal-n" aria-label="次の月"'+(cur>=maxM?' disabled':'')+'>▶</button></div><div class="cal-grid">';
       DOW.forEach(function(d){h+='<div class="cal-dow">'+d+'</div>'});
       for(var b=0;b<first;b++)h+='<div></div>';
       for(var d=1;d<=days;d++){var ds=y+'-'+pad(m+1)+'-'+pad(d),ev=byDay[ds],cls='cal-cell'+(ds<todayS?' past':'')+(ds===todayS?' today':'')+(ev?' has':'')+(ds===sel?' sel':'');
         var rot=ev?((d*37)%9-4):0;
-        h+=ev?'<button type="button" class="'+cls+'" data-d="'+ds+'" style="--r:'+rot+'deg"><span>'+d+'</span><b>'+ev.map(function(x){return x.emoji}).join('')+'</b></button>':'<div class="'+cls+'"><span>'+d+'</span></div>';}
+        h+=ev?'<button type="button" class="'+cls+'" data-d="'+ds+'" aria-label="'+(m+1)+'月'+d+'日 '+E(ev.map(function(x){return x.title}).join('、'))+'" aria-pressed="'+(ds===sel)+'" style="--r:'+rot+'deg"><span>'+d+'</span><b>'+ev.map(function(x){return x.emoji}).join('')+'</b></button>':'<div class="'+cls+'"><span>'+d+'</span></div>';}
       h+='</div><div class="cal-detail">'+detail()+'</div>';el.innerHTML=h;
       var p=document.getElementById('cal-p'),n=document.getElementById('cal-n');
       function pick(){var f=EV.filter(function(e){return ym(e.date)===cur})[0];sel=f?f.date:null}
       p.onclick=function(){if(cur>minM){cur--;pick();render()}};n.onclick=function(){if(cur<maxM){cur++;pick();render()}};
-      el.querySelectorAll('.cal-cell.has').forEach(function(c){c.onclick=function(){sel=c.getAttribute('data-d');render()}});}
+      el.querySelectorAll('.cal-cell.has').forEach(function(c){c.onclick=function(){sel=c.getAttribute('data-d');render();
+        var f=el.querySelector('.cal-cell.sel');if(f)f.focus();
+        var st=document.getElementById('cal-status');if(st)st.textContent=byDay[sel].map(function(x){return x.m+'月'+x.d+'日 '+x.title+' '+x.venue+' '+x.when+' '+x.ticket+' '+x.guests}).join('。')}});}
     render();
+  }
+
+  /* 画像を押すと、画像と文字の詳細を一緒に出す（JSが無ければ画像だけ別タブで開く） */
+  var zoom=document.getElementById('zoom');
+  if(zoom&&zoom.showModal){
+    var ZD=JSON.parse(document.getElementById('cal-data').textContent);
+    var zi=zoom.querySelector('.zoom-img img'),zt=zoom.querySelector('.zoom-info');
+    var ZE=function(s){var d=document.createElement('div');d.textContent=s==null?'':s;return d.innerHTML};
+    var zrow=function(em,lb,t){return t?'<p><span aria-hidden="true">'+em+'</span> <span class="vh">'+lb+'：</span>'+ZE(t)+'</p>':''};
+    function zfill(id,src){
+      var e=ZD.filter(function(x){return x.id===id})[0],h;
+      if(e){
+        zi.src=e.flyer;zi.alt=e.title+' のフライヤー';
+        h='<span class="chip" style="--u:'+ZE(e.color)+'">'+e.emoji+' '+ZE(e.label)+'</span>'
+          +'<h3 id="zoom-title" tabindex="-1">'+e.m+'/'+e.d+'('+ZE(e.dow)+') '+ZE(e.title)+'</h3>'
+          +zrow('📍','会場',e.venue)+zrow('⏰️','時間',e.when)+zrow('🎫','料金',e.ticket)+zrow('🎤','出演',e.guests);
+        if(e.reservable)h+='<a class="rv-btn" href="#sec-reserve" data-rv="'+ZE(e.id)+'">🎫 予約する</a>';
+        h+='<a class="zoom-raw" href="'+ZE(e.flyer)+'" target="_blank" rel="noopener">画像だけを開く ↗</a>';
+      }else{
+        zi.src=src;zi.alt='松たぬら新聞';
+        h='<h3 id="zoom-title" tabindex="-1">📰 松たぬら新聞</h3><p>これからの出演はこちら。押すと詳しく見られます。</p><ul class="zoom-list">'
+          +ZD.map(function(x){return '<li><button type="button" data-zev="'+ZE(x.id)+'"><b>'+x.m+'/'+x.d+'('+ZE(x.dow)+')</b> '+x.emoji+' '+ZE(x.title)+(x.venue?' <span class="vh">会場：</span>＠'+ZE(x.venue):'')+'</button></li>'}).join('')
+          +'</ul><a class="zoom-raw" href="'+ZE(src)+'" target="_blank" rel="noopener">画像だけを開く ↗</a>';
+      }
+      zt.innerHTML=h;zoom.scrollTop=0;
+      var tt=document.getElementById('zoom-title');if(tt)tt.focus({preventScroll:true});
+    }
+    document.addEventListener('click',function(ev){
+      var a=ev.target.closest&&ev.target.closest('.js-zoom');
+      if(a&&!ev.ctrlKey&&!ev.metaKey&&!ev.shiftKey){ev.preventDefault();zoom.showModal();zfill(a.getAttribute('data-ev'),a.getAttribute('href'));return}
+      if(!zoom.open)return;
+      var z=ev.target.closest&&ev.target.closest('[data-zev]');
+      if(z){zfill(z.getAttribute('data-zev'));return}
+      if(ev.target===zoom||(ev.target.closest&&ev.target.closest('.zoom-x'))){zoom.close();return}
+      var rv=ev.target.closest&&ev.target.closest('[data-rv]');
+      if(rv){zoom.close();setTimeout(function(){var f=document.getElementById('rv-name');if(f)f.focus({preventScroll:true})},60)}
+    });
+    zoom.addEventListener('close',function(){zi.removeAttribute('src');zt.innerHTML=''});
   }
 
   /* 予約コーナー（入力はサイトに保存しない。メールかDMの文を作るだけ） */
