@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="ja" data-theme="baka" data-layout="paper" data-baka="2">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>たぬら情報</title>
+<meta name="description" content="松たぬら の出演予定・音源・ユニットのまとめ">
+<meta property="og:title" content="松たぬら｜たぬら情報">
+<meta property="og:description" content="うたったりらっぱ🎺吹くらっぱー🎤 出演予定・音源・ユニットのまとめ">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://magnesiumtanula.github.io/">
+<meta property="og:image" content="https://magnesiumtanula.github.io/assets/icons/magnesium.tanula.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="assets/icons/magnesium.tanula.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Potta+One&family=M+PLUS+Rounded+1c:wght@700;900&family=Zen+Maru+Gothic:wght@700;900&family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@400;700&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffe3f5; --bgimg:url("assets/bg/litlink_pattern.webp"); --wash:.62; --card:#fff; --ink:#3a1030; --sub:#7a3f6b;
+  --accent:#e300a7; --title:#e300a7; --on-bg:#e300a7; --bar:#fff42c; --shadow:#e300a7; --pop2:#18b5ad; --pop3:#5a0f8a;
+  --radius:24px; --line:3px; --font:"M PLUS Rounded 1c","Zen Maru Gothic",system-ui,sans-serif; --head:"Potta One","M PLUS Rounded 1c",sans-serif;
+  --k:1;
+}
+[data-theme="litmix"]{--bg:#ffc2ea;--wash:.72;--radius:18px;--line:0px;--head:var(--font);--ink:#3a1030;--bar:#fff27a;--shadow:#e300a733}
+[data-theme="litlink"]{--bg:#ffc2ea;--wash:0;--card:rgba(255,255,255,.9);--ink:#e300a7;--sub:#b4007f;--bar:rgba(255,255,0,.61);--radius:0px;--line:0px;--head:var(--font);--shadow:transparent}
+[data-theme="pop"]{--bg:#ff40bd;--bgimg:none;--wash:0;--on-bg:#fff;--title:#fff42c;--accent:#2c66ff;--ink:#1d1030;--sub:#5a4a6e;--shadow:#1d1030}
+[data-theme="stage"]{--bg:#141216;--bgimg:none;--wash:0;--card:#1f1b24;--ink:#f4efe6;--sub:#b8aea0;--accent:#f3b13c;--title:#f3b13c;--on-bg:#f4efe6;--bar:#f3b13c;--shadow:#000;--radius:12px;--line:0px;--font:"Noto Sans JP",system-ui,sans-serif;--head:"Shippori Mincho",serif}
+[data-theme="paper"]{--bg:#f3ead8;--bgimg:none;--wash:0;--card:#fffaf0;--ink:#1a1a1a;--sub:#555;--accent:#c8102e;--title:#1a1a1a;--on-bg:#1a1a1a;--bar:#fff;--shadow:#1a1a1a;--radius:2px;--font:"Noto Serif JP",serif;--head:"Shippori Mincho",serif}
+[data-theme="mint"]{--bg:#e6f4ef;--bgimg:none;--wash:0;--ink:#15302a;--sub:#4f6b63;--accent:#0f8a6b;--title:#0f8a6b;--on-bg:#0f8a6b;--bar:#c9f0e2;--shadow:#0f8a6b;--font:"Noto Sans JP",system-ui,sans-serif;--head:var(--font)}
+[data-shape="square"]{--radius:4px}
+[data-shape="soft"]{--radius:14px}
+[data-shape="round"]{--radius:28px}
+[data-baka="1"]{--k:0}
+[data-baka="2"]{--k:1}
+[data-baka="3"]{--k:2.4}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:var(--font);font-weight:700;line-height:1.6;background-color:var(--bg);
+  background-image:linear-gradient(rgba(255,227,245,var(--wash)),rgba(255,227,245,var(--wash))),var(--bgimg);background-size:cover;background-position:center top;background-attachment:fixed;overflow-x:hidden}
+a{color:var(--accent)}
+button{font:inherit}
+.muted{color:var(--sub);font-size:13px}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px 90px}
+.marquee{background:var(--pop3);color:#fff;overflow:hidden;white-space:nowrap;font-size:14px;padding:7px 0;border-bottom:var(--line) solid var(--bar)}
+.marquee-in{display:inline-flex;animation:mq 42s linear infinite}
+.marquee-in span{padding-right:0}
+@keyframes mq{to{transform:translateX(-50%)}}
+.pixel{height:16px;margin:16px -16px 0;background:conic-gradient(#ff7bd5 25%,#fff 0 50%,#fff42c 0 75%,#18b5ad 0) 0 0/16px 16px;opacity:.75}
+[data-theme="paper"] .pixel,[data-theme="stage"] .pixel,[data-theme="mint"] .pixel{opacity:.25}
+
+header.hero{padding:14px 0 2px;position:relative}
+.hero-top{display:flex;align-items:center;gap:12px}
+.avatar{flex:none;width:clamp(78px,23vw,120px);height:clamp(78px,23vw,120px);border-radius:50%;object-fit:cover;border:var(--line) solid var(--shadow);box-shadow:4px 4px 0 var(--bar);display:block;background:#fff;transform:rotate(calc(-5deg*var(--k)))}
+header.hero h1{font-family:var(--head);font-weight:400;font-size:clamp(48px,14.6vw,104px);line-height:1;margin:0;white-space:nowrap;color:var(--title);letter-spacing:.01em;text-shadow:3px 3px 0 var(--bar),6px 6px 0 var(--pop2)}
+.sticker{display:inline-block;font-family:var(--head);font-weight:400;background:var(--pop3);color:#fff;padding:5px 14px;font-size:clamp(20px,5.6vw,30px);transform:rotate(calc(-3deg*var(--k)));margin:12px 0 2px;box-shadow:4px 4px 0 var(--bar)}
+.about{background:var(--card);border:var(--line) solid var(--shadow);border-radius:var(--radius);padding:10px 14px;margin:10px 0 0;box-shadow:4px 4px 0 var(--shadow);font-size:13px;line-height:1.5;transform:rotate(calc(.6deg*var(--k)))}
+.tag{font-size:15px;margin:8px 0 0;color:var(--on-bg);text-shadow:0 0 8px #fff,0 0 2px #fff}
+[data-theme="stage"] .tag{text-shadow:none}
+
+.stack{display:flex;flex-direction:column}
+.sec{margin-top:6px}
+h2{font-family:var(--head);font-weight:400;font-size:clamp(25px,6.6vw,34px);line-height:1.2;margin:22px 0 10px;color:var(--on-bg);text-shadow:2px 2px 0 var(--bar),0 0 8px #fff}
+[data-theme="stage"] h2,[data-theme="pop"] h2{text-shadow:none}
+[data-layout="paper"] #sec-schedule{order:1} [data-layout="paper"] #sec-reserve{order:2} [data-layout="paper"] #sec-release{order:3} [data-layout="paper"] #sec-news{order:4} [data-layout="paper"] #sec-units{order:5} [data-layout="paper"] #sec-contact{order:6} [data-layout="paper"] #sec-next{display:none}
+[data-layout="next"] #sec-next{order:1} [data-layout="next"] #sec-schedule{order:2} [data-layout="next"] #sec-reserve{order:3} [data-layout="next"] #sec-release{order:4} [data-layout="next"] #sec-news{order:5} [data-layout="next"] #sec-units{order:6} [data-layout="next"] #sec-contact{order:7}
+[data-layout="music"] #sec-release{order:1} [data-layout="music"] #sec-schedule{order:2} [data-layout="music"] #sec-reserve{order:3} [data-layout="music"] #sec-news{order:4} [data-layout="music"] #sec-units{order:5} [data-layout="music"] #sec-contact{order:6} [data-layout="music"] #sec-next{display:none}
+
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+.tab{border:var(--line) solid var(--shadow);background:var(--bar);color:var(--ink);font-weight:900;font-size:15px;padding:7px 13px;border-radius:999px;cursor:pointer;box-shadow:3px 3px 0 var(--shadow);transition:transform .12s}
+.tab:hover{transform:translateY(-2px) rotate(calc(-2deg*var(--k)))}
+.tab.on{background:var(--accent);color:#fff;transform:translate(2px,2px);box-shadow:1px 1px 0 var(--shadow)}
+.pane{display:none}.pane.on{display:block}
+
+.reel-wrap{margin:0 -16px}
+.reel{position:relative;display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 16px 14px;scrollbar-width:none;outline:0}
+.reel::-webkit-scrollbar{display:none}
+.slide{flex:0 0 min(84%,430px);scroll-snap-align:center;margin:0;background:var(--card);border:var(--line) solid var(--shadow);border-radius:var(--radius);box-shadow:5px 5px 0 var(--shadow);padding:10px;overflow:hidden;display:flex;flex-direction:column}
+.slide a{display:block;flex:1}
+.slide img{width:100%;height:min(66vh,560px);object-fit:contain;display:block;border-radius:calc(var(--radius)/2)}
+.slide figcaption{font-size:13px;line-height:1.35;padding:8px 2px 0;min-height:3em}
+.reel-ctrl{display:flex;justify-content:center;gap:8px;margin-top:2px}
+.reel-ctrl button{border:var(--line) solid var(--shadow);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer;font-weight:900}
+.dots{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin-top:9px}
+.dots i{width:11px;height:11px;border-radius:50%;background:var(--card);border:2px solid var(--shadow);display:block}
+.dots i.on{background:var(--accent);transform:scale(1.25)}
+
+.cal{background:var(--card);border:var(--line) solid var(--shadow);border-radius:var(--radius);box-shadow:5px 5px 0 var(--shadow);padding:14px}
+.cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.cal-title{font-family:var(--head);font-size:24px;color:var(--accent)}
+.cal-head button{border:var(--line) solid var(--shadow);background:var(--bar);color:var(--ink);border-radius:50%;width:42px;height:42px;cursor:pointer;font-weight:900}
+.cal-head button:disabled{opacity:.25;cursor:default}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-dow{text-align:center;font-size:12px;color:var(--sub);padding-bottom:2px}
+.cal-dow:first-child{color:#e0485b}.cal-dow:nth-child(7){color:#2c7be0}
+.cal-cell{aspect-ratio:1;min-width:0;border:0;background:transparent;border-radius:14px;color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:14px;line-height:1.1;padding:0}
+.cal-cell.past{opacity:.35}
+.cal-cell.today{outline:2px dashed var(--pop2);outline-offset:-2px}
+.cal-cell.has{background:var(--bar);border:2px solid var(--shadow);cursor:pointer;font-weight:900;transform:rotate(calc(var(--r)*var(--k)))}
+.cal-cell.has:hover{transform:scale(1.08) rotate(calc(-4deg*var(--k)))}
+.cal-cell.sel{background:var(--accent);color:#fff}
+.cal-cell b{font-size:clamp(17px,4.6vw,24px);font-weight:400;line-height:1.1}
+.cal-detail{margin-top:14px;border-top:3px dotted var(--shadow);padding-top:12px}
+.cal-detail h3{margin:6px 0;font-size:20px;line-height:1.3;color:var(--accent)}
+.cal-detail p{margin:2px 0;font-size:14px;color:var(--sub)}
+.cal-detail img{display:block;width:min(100%,300px);margin-top:10px;border-radius:calc(var(--radius)/2)}
+.cal-none{color:var(--sub);font-size:14px;margin:0;text-align:center}
+
+.grid{display:grid;gap:16px}
+.ev{display:grid;grid-template-columns:62px 1fr;gap:12px;background:var(--card);border:var(--line) solid var(--shadow);border-radius:var(--radius);padding:14px;box-shadow:5px 5px 0 var(--u)}
+.ev:nth-child(odd){transform:rotate(calc(-.5deg*var(--k)))}
+.ev:nth-child(even){transform:rotate(calc(.5deg*var(--k)))}
+.ev-date{display:flex;flex-direction:column;align-items:center;line-height:1.05;color:var(--u)}
+.ev-m{font-size:13px}.ev-d{font-family:var(--head);font-size:34px;margin:2px 0}.ev-w{font-size:12px;color:var(--sub)}
+.ev-body h3{margin:5px 0 5px;font-size:18px;line-height:1.3;color:var(--accent);overflow-wrap:anywhere}
+.ev-body p{margin:2px 0;font-size:14px;color:var(--sub);overflow-wrap:anywhere}
+.chip{display:inline-block;background:var(--u);color:#fff;font-size:12px;padding:2px 10px;border-radius:999px}
+.ev-tbd h3{color:var(--sub)}
+.ev-flyer{grid-column:1/-1}
+.ev-flyer img{width:100%;max-height:320px;object-fit:contain;display:block;background:#0000000a;border-radius:calc(var(--radius)/2)}
+
+.release{display:grid;grid-template-columns:128px 1fr;gap:14px;background:var(--card);border:var(--line) solid var(--shadow);border-radius:var(--radius);padding:14px;box-shadow:5px 5px 0 var(--pop2);transform:rotate(calc(-.5deg*var(--k)))}
+.release-cover img{width:100%;aspect-ratio:1;object-fit:cover;display:block;border-radius:calc(var(--radius)/2)}
+.release-head{font-size:12px;color:var(--sub)}
+.release-title{margin:2px 0 4px;font-size:21px;line-height:1.25;color:var(--accent);font-family:var(--head);font-weight:400;overflow-wrap:anywhere}
+.release-body p{margin:0;font-size:13px;color:var(--sub)}
+.release-player{grid-column:1/-1;width:100%;height:120px;border:0;display:block;background:#fff}
+.release-link{grid-column:1/-1;font-size:14px}
+
+.reserve{background:var(--card);border:var(--line) solid var(--shadow);border-radius:var(--radius);padding:16px;box-shadow:5px 5px 0 var(--bar)}
+.reserve-lead{margin:0 0 10px;font-size:15px}
+.reserve label{display:block;font-size:13px;color:var(--sub);margin-bottom:10px}
+.reserve select,.reserve input{display:block;width:100%;margin-top:3px;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:2px solid var(--shadow);border-radius:12px;padding:9px 10px}
+.rv-row{display:grid;grid-template-columns:1fr 84px;gap:10px}
+.rv-preview{white-space:pre-line;font-size:14px;background:#00000008;border:2px dashed var(--shadow);border-radius:12px;padding:10px 12px;margin-bottom:12px;overflow-wrap:anywhere}
+.reserve .muted{margin:10px 0 0}
+.rv-btn{display:inline-block;margin-top:8px;background:var(--bar);color:#1a1a1a;border:2px solid var(--shadow);border-radius:999px;padding:4px 14px;text-decoration:none;font-size:14px;font-weight:900}
+.cal-detail .rv-btn{margin:8px 0 2px}
+.news{list-style:none;margin:0;padding:12px 18px;background:var(--card);border:var(--line) solid var(--shadow);border-radius:var(--radius);box-shadow:5px 5px 0 var(--pop3)}
+.news li{display:grid;grid-template-columns:auto 1fr;gap:12px;padding:8px 0;font-size:15px}
+.news li+li{border-top:3px dotted #0000001f}
+.news time{color:var(--sub);font-size:13px;line-height:1.8;white-space:nowrap}
+
+.units{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.unit{background:var(--card);border:var(--line) solid var(--shadow);border-radius:var(--radius);padding:16px;box-shadow:5px 5px 0 var(--u)}
+.unit:nth-child(odd){transform:rotate(calc(-.6deg*var(--k)))}
+.unit:nth-child(even){transform:rotate(calc(.7deg*var(--k)))}
+.unit-head{display:flex;align-items:center;gap:10px}
+.unit-icon{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:2px solid var(--shadow)}
+.unit-emoji{font-size:38px;line-height:1;flex:none}
+.unit h3{margin:0;font-size:18px;line-height:1.3;color:var(--accent);overflow-wrap:anywhere}
+.unit p{color:var(--sub);font-size:13.5px;overflow-wrap:anywhere;white-space:pre-line;margin:10px 0}
+.work-title{font-family:var(--head);font-weight:400;font-size:22px;color:var(--on-bg);margin:22px 0 10px;text-shadow:2px 2px 0 var(--bar),0 0 8px #fff}
+.unit-role{display:block;font-size:12px;font-weight:700;color:var(--sub);margin-top:2px}
+.links a{display:inline-block;margin:0 10px 6px 0;font-size:14px}
+
+.contact{background:var(--bar);border:var(--line) solid var(--shadow);border-radius:var(--radius);padding:18px;box-shadow:5px 5px 0 var(--shadow);transform:rotate(calc(.5deg*var(--k)))}
+.contact-title{font-family:var(--head);font-weight:400;font-size:clamp(22px,6vw,30px);margin:0 0 4px;line-height:1.25;color:#1a1a1a}
+.contact p{margin:0 0 12px;color:#1a1a1a}
+.masu{font-family:"Noto Serif JP","Noto Sans JP",serif;font-weight:700}
+.big-btns{display:flex;gap:10px;flex-wrap:wrap}
+.big-btn{background:var(--accent);color:#fff;border:var(--line) solid var(--shadow);border-radius:999px;padding:10px 18px;text-decoration:none;font-weight:900;font-size:15px;cursor:pointer;box-shadow:3px 3px 0 #1a1a1a}
+.big-btn:hover{transform:translateY(-2px)}
+footer{margin-top:40px;font-size:13px;color:var(--ink)}
+footer .links{background:var(--card);border-radius:var(--radius);padding:12px 16px 6px;margin-bottom:10px}
+
+.floaters{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0;display:none}
+[data-baka="3"] .floaters{display:block}
+.floaters i{position:absolute;top:-50px;font-style:normal;font-size:30px;animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(115vh) rotate(420deg)}}
+[data-baka="3"] h1{animation:wob 1.6s ease-in-out infinite}
+@keyframes wob{50%{transform:rotate(-3deg) scale(1.03)}}
+.wrap{position:relative;z-index:1}
+[data-baka="1"] .marquee-in{animation-duration:80s}
+@media (prefers-reduced-motion:reduce){.marquee-in,[data-baka="3"] h1,.floaters i{animation:none}html{scroll-behavior:auto}.floaters{display:none!important}}
+
+#dp{position:fixed;right:12px;bottom:12px;z-index:9;font-family:system-ui,sans-serif;font-size:13px;font-weight:400}
+#dp .fab{background:#111;color:#fff;border:0;border-radius:999px;padding:12px 16px;font-size:15px;box-shadow:0 6px 20px #0004;cursor:pointer}
+#dp .panel{display:none;background:#fff;color:#111;border-radius:14px;padding:14px;width:min(330px,calc(100vw - 24px));box-shadow:0 10px 30px #0005;margin-bottom:10px;max-height:calc(100vh - 90px);overflow:auto}
+#dp.open .panel{display:block}
+#dp h4{margin:10px 0 6px;font-size:12px;color:#666}
+#dp .row{display:flex;flex-wrap:wrap;gap:6px}
+#dp button.opt{border:2px solid #ddd;background:#fafafa;color:#111;border-radius:999px;padding:5px 11px;cursor:pointer;font-size:13px}
+#dp button.opt.on{border-color:#111;background:#111;color:#fff}
+#dp .icons{display:flex;flex-wrap:wrap;gap:8px}
+#dp .icon-opt{border:3px solid #ddd;background:#fff;color:#111;border-radius:12px;padding:4px;width:84px;cursor:pointer;font-size:11px;line-height:1.2}
+#dp .icon-opt img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;display:block;margin-bottom:3px}
+#dp .icon-opt.on{border-color:#111}
+#dp label{display:flex;align-items:center;gap:8px;margin:4px 0}
+#dp input[type=color]{width:36px;height:28px;border:0;padding:0;background:none}
+#dp .note{color:#111;background:#f4f4f4;border-radius:8px;padding:8px;font-size:12px;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="floaters" aria-hidden="true"><i style="left:5%;animation-duration:11s;animation-delay:-0s">🥔</i><i style="left:18%;animation-duration:14s;animation-delay:-2s">🎺</i><i style="left:31%;animation-duration:17s;animation-delay:-4s">🍏</i><i style="left:44%;animation-duration:11s;animation-delay:-6s">💎</i><i style="left:57%;animation-duration:14s;animation-delay:-8s">🐾</i><i style="left:70%;animation-duration:17s;animation-delay:-10s">🫀</i><i style="left:83%;animation-duration:11s;animation-delay:-12s">🎤</i><i style="left:0%;animation-duration:14s;animation-delay:-14s">🦍</i><i style="left:13%;animation-duration:17s;animation-delay:-16s">🥔</i><i style="left:26%;animation-duration:11s;animation-delay:-18s">🎺</i><i style="left:39%;animation-duration:14s;animation-delay:-20s">🍏</i><i style="left:52%;animation-duration:17s;animation-delay:-22s">💎</i></div>
+<div class="marquee" aria-hidden="true"><div class="marquee-in"><span>つぎの出現→ 10/31(土) 🥔 路哲 PROTEST HALLOWEEN＠新宿駅東南口広場 ★ うたったりらっぱ🎺吹くらっぱー🎤 ★ 出演依頼お待ちして居り<span class="masu">〼</span>！ ★ 麻婆豆腐は最近全然やれてない ★ </span><span>つぎの出現→ 10/31(土) 🥔 路哲 PROTEST HALLOWEEN＠新宿駅東南口広場 ★ うたったりらっぱ🎺吹くらっぱー🎤 ★ 出演依頼お待ちして居り<span class="masu">〼</span>！ ★ 麻婆豆腐は最近全然やれてない ★ </span></div></div>
+<div class="wrap">
+<header class="hero">
+  <div class="hero-top"><img class="avatar" id="avatar" src="assets/icons/magnesium.tanula.jpg" alt=""><h1>松たぬら</h1></div>
+  <div class="sticker">松たぬら…何者だ?!</div>
+  <p class="tag">うたったりらっぱ🎺吹くらっぱー🎤</p>
+  <div class="about">95.8.15東京に顕れしFABULOUS。歌、ラッパ🎺演奏によるソロ/ユニット/バンドでのライブ活動や音照オペレーション修行や麻婆豆腐の提供(最近全然やれてない)…等の活動に勢力的に取組んでいる…らしい。</div>
+</header>
+<div class="pixel" aria-hidden="true"></div>
+
+<div class="stack">
+  <section class="sec" id="sec-next">
+    <h2>🏃 つぎの出現</h2>
+    
+<article class="ev" style="--u:#c98a3a">
+  <div class="ev-date"><span class="ev-m">10月</span><span class="ev-d">31</span><span class="ev-w">土</span></div>
+  <div class="ev-body">
+    <span class="chip">🥔 路哲</span>
+    <h3>路哲 PROTEST HALLOWEEN</h3>
+    <p>📍 新宿駅東南口広場</p><p>🎤 路哲</p>
+  </div>
+  <a class="ev-flyer" href="https://d3e0luujhwn38u.cloudfront.net/resized/BJz6q7Fg1IRTq-DjZnP4UKdRkk6wmXWvtRqmzUpXy9c/s:3200/plain/s3://typefully-user-uploads/img/original/332740/fa5e6bc7-e1a8-47bb-b1fb-78203c4d4d5a.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/BJz6q7Fg1IRTq-DjZnP4UKdRkk6wmXWvtRqmzUpXy9c/s:3200/plain/s3://typefully-user-uploads/img/original/332740/fa5e6bc7-e1a8-47bb-b1fb-78203c4d4d5a.jpg" alt="路哲 PROTEST HALLOWEEN のフライヤー" loading="lazy"></a>
+</article>
+  </section>
+
+  <section class="sec" id="sec-schedule">
+    <h2>その最新情報を追え!!!!</h2>
+    <div class="tabs">
+      <button type="button" class="tab" data-t="paper">📰 新聞</button>
+      <button type="button" class="tab" data-t="cal">📅 カレンダー</button>
+      <button type="button" class="tab" data-t="list">📋 リスト</button>
+    </div>
+    <div class="pane" data-pane="paper"><div class="reel-wrap"><div class="reel" id="reel" tabindex="0" aria-label="松たぬら新聞とフライヤー"><figure class="slide slide-paper" data-sec="8"><a href="assets/shinbun.png" target="_blank" rel="noopener"><img src="assets/shinbun.png" alt="松たぬら新聞（出演予定の一覧）"></a><figcaption>📰 松たぬら新聞（タップで大きく）</figcaption></figure><figure class="slide" data-sec="4"><a href="https://d3e0luujhwn38u.cloudfront.net/resized/BJz6q7Fg1IRTq-DjZnP4UKdRkk6wmXWvtRqmzUpXy9c/s:3200/plain/s3://typefully-user-uploads/img/original/332740/fa5e6bc7-e1a8-47bb-b1fb-78203c4d4d5a.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/BJz6q7Fg1IRTq-DjZnP4UKdRkk6wmXWvtRqmzUpXy9c/s:3200/plain/s3://typefully-user-uploads/img/original/332740/fa5e6bc7-e1a8-47bb-b1fb-78203c4d4d5a.jpg" alt="路哲 PROTEST HALLOWEEN のフライヤー" loading="lazy"></a><figcaption>🥔 10/31(土) 路哲 PROTEST HALLOWEEN</figcaption></figure><figure class="slide" data-sec="4"><a href="https://d3e0luujhwn38u.cloudfront.net/resized/YghbpKh4iFHvc4qEqBtVvgCE3BQp4_OPQD50x18OWKA/s:3200/plain/s3://typefully-user-uploads/img/original/332740/308ae428-57ba-4d78-a117-9e28259f69eb.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/YghbpKh4iFHvc4qEqBtVvgCE3BQp4_OPQD50x18OWKA/s:3200/plain/s3://typefully-user-uploads/img/original/332740/308ae428-57ba-4d78-a117-9e28259f69eb.jpg" alt="It&#x27;s a family affair vol.4 のフライヤー" loading="lazy"></a><figcaption>🍏 11/3(火) It&#x27;s a family affair vol.4</figcaption></figure><figure class="slide" data-sec="4"><a href="https://d3e0luujhwn38u.cloudfront.net/resized/t0Ctkjk9esNTXUKNM7y7OaC9iyU9mFeM4ACMlEuo0yQ/s:3200/plain/s3://typefully-user-uploads/img/original/332740/b2fa8b34-9952-4464-83f3-6fb6dc1200f7.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/t0Ctkjk9esNTXUKNM7y7OaC9iyU9mFeM4ACMlEuo0yQ/s:3200/plain/s3://typefully-user-uploads/img/original/332740/b2fa8b34-9952-4464-83f3-6fb6dc1200f7.jpg" alt="MicroLlamaレコ発『System Debug Operator』 のフライヤー" loading="lazy"></a><figcaption>🫀 11/11(水) MicroLlamaレコ発『System Debug Operator』</figcaption></figure><figure class="slide" data-sec="4"><a href="https://d3e0luujhwn38u.cloudfront.net/resized/6JTTesw1Uh7hQ-Nhy9fetdJ4_PcncDWZUh64M1_3eOI/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9de47038-62cd-4009-a6c6-397563edc151.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/6JTTesw1Uh7hQ-Nhy9fetdJ4_PcncDWZUh64M1_3eOI/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9de47038-62cd-4009-a6c6-397563edc151.jpg" alt="Cliff Side Dream Dancing のフライヤー" loading="lazy"></a><figcaption>🎷 11/14(土) Cliff Side Dream Dancing</figcaption></figure><figure class="slide" data-sec="4"><a href="https://d3e0luujhwn38u.cloudfront.net/resized/B3i10eaUlabCutHe6oxR2jG_HZXcTRinnqvw9ev8NVw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/eef46eb1-7461-4684-9b37-c9dee25c8aed.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/B3i10eaUlabCutHe6oxR2jG_HZXcTRinnqvw9ev8NVw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/eef46eb1-7461-4684-9b37-c9dee25c8aed.jpg" alt="Soirée Chanson Concert #362 のフライヤー" loading="lazy"></a><figcaption>🫀 11/16(月) Soirée Chanson Concert #362</figcaption></figure><figure class="slide" data-sec="4"><a href="https://d3e0luujhwn38u.cloudfront.net/resized/8gKSXJ4vrkq2iBwrqNti-aEtSMtWz9RqUemXV_XqAco/s:3200/plain/s3://typefully-user-uploads/img/original/332740/5482c929-e90e-4770-a699-8599537f7eb5.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/8gKSXJ4vrkq2iBwrqNti-aEtSMtWz9RqUemXV_XqAco/s:3200/plain/s3://typefully-user-uploads/img/original/332740/5482c929-e90e-4770-a699-8599537f7eb5.jpg" alt="JON(犬)ともん土の妖しいフレンチポップサークル♪ のフライヤー" loading="lazy"></a><figcaption>🫀 11/17(火) JON(犬)ともん土の妖しいフレンチポップサークル♪</figcaption></figure><figure class="slide" data-sec="4"><a href="https://d3e0luujhwn38u.cloudfront.net/resized/ZUzeYt51FmlOi0dNXeB6ELRiY0-Mgug4RyvIyFrhJfY/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9b599b2b-c4a2-45a2-9f64-6b5d4d369c47.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/ZUzeYt51FmlOi0dNXeB6ELRiY0-Mgug4RyvIyFrhJfY/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9b599b2b-c4a2-45a2-9f64-6b5d4d369c47.jpg" alt="美里ウィンチェスターわんまん屋さん のフライヤー" loading="lazy"></a><figcaption>💎 11/22(日) 美里ウィンチェスターわんまん屋さん</figcaption></figure><figure class="slide" data-sec="4"><a href="https://d3e0luujhwn38u.cloudfront.net/resized/v2BIb2K7v10ht8uN1Gq2fCK5zk3cQiLyBDdznhvTCi0/s:3200/plain/s3://typefully-user-uploads/img/original/332740/a83ea171-58e3-4835-94a8-3e258a09c598.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/v2BIb2K7v10ht8uN1Gq2fCK5zk3cQiLyBDdznhvTCi0/s:3200/plain/s3://typefully-user-uploads/img/original/332740/a83ea171-58e3-4835-94a8-3e258a09c598.jpg" alt="胞擾ハーヴヱスト ~生命のニョッキを添えて~ のフライヤー" loading="lazy"></a><figcaption>💎 11/30(月) 胞擾ハーヴヱスト ~生命のニョッキを添えて~</figcaption></figure><figure class="slide" data-sec="4"><a href="https://d3e0luujhwn38u.cloudfront.net/resized/o7Pn1Di4JU0vjznM9HquJwMJWBdYQ6KIKe4To1M8oEw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/f9423a2e-a4a8-4d4c-8f84-aa335d9c8d70.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/o7Pn1Di4JU0vjznM9HquJwMJWBdYQ6KIKe4To1M8oEw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/f9423a2e-a4a8-4d4c-8f84-aa335d9c8d70.jpg" alt="織田島酒店で逢いまショー♪ のフライヤー" loading="lazy"></a><figcaption>🍏 12/12(土) 織田島酒店で逢いまショー♪</figcaption></figure><figure class="slide" data-sec="4"><a href="https://d3e0luujhwn38u.cloudfront.net/resized/zYgdXKyNTzwmikRVZ678iq-lDp2a0Xxb7QmULUoGnpo/s:3200/plain/s3://typefully-user-uploads/img/original/332740/c8da8f35-2986-4969-b059-4389369ed1c3.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/zYgdXKyNTzwmikRVZ678iq-lDp2a0Xxb7QmULUoGnpo/s:3200/plain/s3://typefully-user-uploads/img/original/332740/c8da8f35-2986-4969-b059-4389369ed1c3.jpg" alt="音楽事故物件 のフライヤー" loading="lazy"></a><figcaption>🍏 1/7(木) 音楽事故物件</figcaption></figure></div><div class="reel-ctrl"><button type="button" id="reel-prev" aria-label="前へ">◀</button><button type="button" id="reel-play">⏸ とめる</button><button type="button" id="reel-next" aria-label="次へ">▶</button></div><div class="dots" id="reel-dots"></div></div></div>
+    <div class="pane" data-pane="cal"><div class="cal" id="cal"></div></div>
+    <div class="pane" data-pane="list"><div class="grid">
+<article class="ev" style="--u:#c98a3a">
+  <div class="ev-date"><span class="ev-m">10月</span><span class="ev-d">31</span><span class="ev-w">土</span></div>
+  <div class="ev-body">
+    <span class="chip">🥔 路哲</span>
+    <h3>路哲 PROTEST HALLOWEEN</h3>
+    <p>📍 新宿駅東南口広場</p><p>🎤 路哲</p>
+  </div>
+  <a class="ev-flyer" href="https://d3e0luujhwn38u.cloudfront.net/resized/BJz6q7Fg1IRTq-DjZnP4UKdRkk6wmXWvtRqmzUpXy9c/s:3200/plain/s3://typefully-user-uploads/img/original/332740/fa5e6bc7-e1a8-47bb-b1fb-78203c4d4d5a.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/BJz6q7Fg1IRTq-DjZnP4UKdRkk6wmXWvtRqmzUpXy9c/s:3200/plain/s3://typefully-user-uploads/img/original/332740/fa5e6bc7-e1a8-47bb-b1fb-78203c4d4d5a.jpg" alt="路哲 PROTEST HALLOWEEN のフライヤー" loading="lazy"></a>
+</article>
+<article class="ev" style="--u:#3fa845">
+  <div class="ev-date"><span class="ev-m">11月</span><span class="ev-d">3</span><span class="ev-w">火</span></div>
+  <div class="ev-body">
+    <span class="chip">🍏 リンゴリラ</span>
+    <h3>It&#x27;s a family affair vol.4</h3>
+    <p>📍 高円寺JIROKICHI</p><p>⏰️ 開場 18:30 / 開演 19:00</p><p>🎫 予約・当日とも¥3,000＋1ドリンクオーダー</p><p>🎤 倉谷和宏／JabBee／THE GOLDEN CROWNS／スダッチ&amp;SPコネクション</p><a class="rv-btn" href="#sec-reserve" data-rv="261103">🎫 予約する</a>
+  </div>
+  <a class="ev-flyer" href="https://d3e0luujhwn38u.cloudfront.net/resized/YghbpKh4iFHvc4qEqBtVvgCE3BQp4_OPQD50x18OWKA/s:3200/plain/s3://typefully-user-uploads/img/original/332740/308ae428-57ba-4d78-a117-9e28259f69eb.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/YghbpKh4iFHvc4qEqBtVvgCE3BQp4_OPQD50x18OWKA/s:3200/plain/s3://typefully-user-uploads/img/original/332740/308ae428-57ba-4d78-a117-9e28259f69eb.jpg" alt="It&#x27;s a family affair vol.4 のフライヤー" loading="lazy"></a>
+</article>
+<article class="ev" style="--u:#e0485b">
+  <div class="ev-date"><span class="ev-m">11月</span><span class="ev-d">11</span><span class="ev-w">水</span></div>
+  <div class="ev-body">
+    <span class="chip">🫀 ソロ</span>
+    <h3>MicroLlamaレコ発『System Debug Operator』</h3>
+    <p>📍 渋谷ラママ</p><p>⏰️ 開場 19:00 / 開演 19:30</p><p>🎫 前売・当日とも¥3,500（+1D）</p><p>🎤 MicroLlama／松永天馬／山下メロのニュー文化／シャウワウ ほか（DJ：エリヌ＆マコピ）</p><a class="rv-btn" href="#sec-reserve" data-rv="261111">🎫 予約する</a>
+  </div>
+  <a class="ev-flyer" href="https://d3e0luujhwn38u.cloudfront.net/resized/t0Ctkjk9esNTXUKNM7y7OaC9iyU9mFeM4ACMlEuo0yQ/s:3200/plain/s3://typefully-user-uploads/img/original/332740/b2fa8b34-9952-4464-83f3-6fb6dc1200f7.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/t0Ctkjk9esNTXUKNM7y7OaC9iyU9mFeM4ACMlEuo0yQ/s:3200/plain/s3://typefully-user-uploads/img/original/332740/b2fa8b34-9952-4464-83f3-6fb6dc1200f7.jpg" alt="MicroLlamaレコ発『System Debug Operator』 のフライヤー" loading="lazy"></a>
+</article>
+<article class="ev" style="--u:#d9a21b">
+  <div class="ev-date"><span class="ev-m">11月</span><span class="ev-d">14</span><span class="ev-w">土</span></div>
+  <div class="ev-body">
+    <span class="chip">🎷 ビッグバンド</span>
+    <h3>Cliff Side Dream Dancing</h3>
+    <p>📍 横浜元町 クリフサイド</p><p>🎫 3,000円（テーブルチャージ・1ドリンク込）</p><p>🎤 横濱ダンス・ビッグバンド（YDBB／2011年結成）で出演</p><a class="rv-btn" href="#sec-reserve" data-rv="261114">🎫 予約する</a>
+  </div>
+  <a class="ev-flyer" href="https://d3e0luujhwn38u.cloudfront.net/resized/6JTTesw1Uh7hQ-Nhy9fetdJ4_PcncDWZUh64M1_3eOI/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9de47038-62cd-4009-a6c6-397563edc151.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/6JTTesw1Uh7hQ-Nhy9fetdJ4_PcncDWZUh64M1_3eOI/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9de47038-62cd-4009-a6c6-397563edc151.jpg" alt="Cliff Side Dream Dancing のフライヤー" loading="lazy"></a>
+</article>
+<article class="ev" style="--u:#e0485b">
+  <div class="ev-date"><span class="ev-m">11月</span><span class="ev-d">16</span><span class="ev-w">月</span></div>
+  <div class="ev-body">
+    <span class="chip">🫀 ソロ</span>
+    <h3>Soirée Chanson Concert #362</h3>
+    <p>📍 高円寺 十話音</p><p>⏰️ 開場 18:00 / 開演 19:00</p><p>🎫 1stage¥1,000+2order（入場時のみ）</p><p>🎤 ドビッチーまゆ／ソワレ／沙弥朗</p><a class="rv-btn" href="#sec-reserve" data-rv="261116">🎫 予約する</a>
+  </div>
+  <a class="ev-flyer" href="https://d3e0luujhwn38u.cloudfront.net/resized/B3i10eaUlabCutHe6oxR2jG_HZXcTRinnqvw9ev8NVw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/eef46eb1-7461-4684-9b37-c9dee25c8aed.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/B3i10eaUlabCutHe6oxR2jG_HZXcTRinnqvw9ev8NVw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/eef46eb1-7461-4684-9b37-c9dee25c8aed.jpg" alt="Soirée Chanson Concert #362 のフライヤー" loading="lazy"></a>
+</article>
+<article class="ev" style="--u:#e0485b">
+  <div class="ev-date"><span class="ev-m">11月</span><span class="ev-d">17</span><span class="ev-w">火</span></div>
+  <div class="ev-body">
+    <span class="chip">🫀 ソロ</span>
+    <h3>JON(犬)ともん土の妖しいフレンチポップサークル♪</h3>
+    <p>📍 高円寺 十話音</p><p>🎫 予約¥3,000／当日¥3,500（+2order）</p><p>🎤 大河もん土／ちんすこうルー［JON(犬)］／ドビッチーまゆ(piano)</p><a class="rv-btn" href="#sec-reserve" data-rv="261117">🎫 予約する</a>
+  </div>
+  <a class="ev-flyer" href="https://d3e0luujhwn38u.cloudfront.net/resized/8gKSXJ4vrkq2iBwrqNti-aEtSMtWz9RqUemXV_XqAco/s:3200/plain/s3://typefully-user-uploads/img/original/332740/5482c929-e90e-4770-a699-8599537f7eb5.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/8gKSXJ4vrkq2iBwrqNti-aEtSMtWz9RqUemXV_XqAco/s:3200/plain/s3://typefully-user-uploads/img/original/332740/5482c929-e90e-4770-a699-8599537f7eb5.jpg" alt="JON(犬)ともん土の妖しいフレンチポップサークル♪ のフライヤー" loading="lazy"></a>
+</article>
+<article class="ev" style="--u:#8e5cff">
+  <div class="ev-date"><span class="ev-m">11月</span><span class="ev-d">22</span><span class="ev-w">日</span></div>
+  <div class="ev-body">
+    <span class="chip">💎 たぬとわ</span>
+    <h3>美里ウィンチェスターわんまん屋さん</h3>
+    <p>📍 新宿 RedCloth</p><p>⏰️ 開場 17:30 / 開演 18:00</p><p>🎫 予約¥3,000／当日¥3,500（共に+1ドリンク代）</p><p>🎤 美里ウィンチェスター（主役）／OA(1) たぬとわ／OA(2) 未定</p><a class="rv-btn" href="#sec-reserve" data-rv="261122">🎫 予約する</a>
+  </div>
+  <a class="ev-flyer" href="https://d3e0luujhwn38u.cloudfront.net/resized/ZUzeYt51FmlOi0dNXeB6ELRiY0-Mgug4RyvIyFrhJfY/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9b599b2b-c4a2-45a2-9f64-6b5d4d369c47.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/ZUzeYt51FmlOi0dNXeB6ELRiY0-Mgug4RyvIyFrhJfY/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9b599b2b-c4a2-45a2-9f64-6b5d4d369c47.jpg" alt="美里ウィンチェスターわんまん屋さん のフライヤー" loading="lazy"></a>
+</article>
+<article class="ev ev-tbd" style="--u:#c98a3a">
+  <div class="ev-date"><span class="ev-m">11月</span><span class="ev-d">28</span><span class="ev-w">土</span></div>
+  <div class="ev-body">
+    <span class="chip">🥔 路哲</span>
+    <h3>なんかある！（詳細は後日）</h3>
+    <p>📍 宇都宮</p>
+  </div>
+  
+</article>
+<article class="ev" style="--u:#8e5cff">
+  <div class="ev-date"><span class="ev-m">11月</span><span class="ev-d">30</span><span class="ev-w">月</span></div>
+  <div class="ev-body">
+    <span class="chip">💎 たぬとわ</span>
+    <h3>胞擾ハーヴヱスト ~生命のニョッキを添えて~</h3>
+    <p>📍 阿佐ヶ谷 mogumogu</p><p>⏰️ 開場 18:30 / 開演 19:00</p><p>🎫 料金¥2,500＋1ドリンク</p><p>🎤 斉藤めい、パワーパーティ900</p><a class="rv-btn" href="#sec-reserve" data-rv="261130">🎫 予約する</a>
+  </div>
+  <a class="ev-flyer" href="https://d3e0luujhwn38u.cloudfront.net/resized/v2BIb2K7v10ht8uN1Gq2fCK5zk3cQiLyBDdznhvTCi0/s:3200/plain/s3://typefully-user-uploads/img/original/332740/a83ea171-58e3-4835-94a8-3e258a09c598.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/v2BIb2K7v10ht8uN1Gq2fCK5zk3cQiLyBDdznhvTCi0/s:3200/plain/s3://typefully-user-uploads/img/original/332740/a83ea171-58e3-4835-94a8-3e258a09c598.jpg" alt="胞擾ハーヴヱスト ~生命のニョッキを添えて~ のフライヤー" loading="lazy"></a>
+</article>
+<article class="ev ev-tbd" style="--u:#8e5cff">
+  <div class="ev-date"><span class="ev-m">12月</span><span class="ev-d">4</span><span class="ev-w">金</span></div>
+  <div class="ev-body">
+    <span class="chip">💎 たぬとわ</span>
+    <h3>なんかある！（詳細は後日）</h3>
+    
+  </div>
+  
+</article>
+<article class="ev" style="--u:#3fa845">
+  <div class="ev-date"><span class="ev-m">12月</span><span class="ev-d">12</span><span class="ev-w">土</span></div>
+  <div class="ev-body">
+    <span class="chip">🍏 リンゴリラ</span>
+    <h3>織田島酒店で逢いまショー♪</h3>
+    <p>📍 国立・織田島酒店</p><p>⏰️ 開場 14:00 / 開演 14:30</p><p>🎫 料金¥2,500（飲食物の購入をお願いします）</p><a class="rv-btn" href="#sec-reserve" data-rv="261212">🎫 予約する</a>
+  </div>
+  <a class="ev-flyer" href="https://d3e0luujhwn38u.cloudfront.net/resized/o7Pn1Di4JU0vjznM9HquJwMJWBdYQ6KIKe4To1M8oEw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/f9423a2e-a4a8-4d4c-8f84-aa335d9c8d70.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/o7Pn1Di4JU0vjznM9HquJwMJWBdYQ6KIKe4To1M8oEw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/f9423a2e-a4a8-4d4c-8f84-aa335d9c8d70.jpg" alt="織田島酒店で逢いまショー♪ のフライヤー" loading="lazy"></a>
+</article>
+<article class="ev ev-tbd" style="--u:#6b7280">
+  <div class="ev-date"><span class="ev-m">12月</span><span class="ev-d">27</span><span class="ev-w">日</span></div>
+  <div class="ev-body">
+    <span class="chip">🔧 ムジカPA</span>
+    <h3>なんかある！（詳細は後日）</h3>
+    <p>📍 日暮里ムジカ</p>
+  </div>
+  
+</article>
+<article class="ev" style="--u:#3fa845">
+  <div class="ev-date"><span class="ev-m">1月</span><span class="ev-d">7</span><span class="ev-w">木</span></div>
+  <div class="ev-body">
+    <span class="chip">🍏 リンゴリラ</span>
+    <h3>音楽事故物件</h3>
+    <p>📍 高円寺 ShowBoat</p><p>⏰️ 開場 18:30 / 開演 19:00</p><p>🎫 ¥3,000（D別）</p><p>🎤 ケキャール！／ミッドカンブリアンピリオド</p><a class="rv-btn" href="#sec-reserve" data-rv="270107">🎫 予約する</a>
+  </div>
+  <a class="ev-flyer" href="https://d3e0luujhwn38u.cloudfront.net/resized/zYgdXKyNTzwmikRVZ678iq-lDp2a0Xxb7QmULUoGnpo/s:3200/plain/s3://typefully-user-uploads/img/original/332740/c8da8f35-2986-4969-b059-4389369ed1c3.jpg" target="_blank" rel="noopener"><img src="https://d3e0luujhwn38u.cloudfront.net/resized/zYgdXKyNTzwmikRVZ678iq-lDp2a0Xxb7QmULUoGnpo/s:3200/plain/s3://typefully-user-uploads/img/original/332740/c8da8f35-2986-4969-b059-4389369ed1c3.jpg" alt="音楽事故物件 のフライヤー" loading="lazy"></a>
+</article></div></div>
+  </section>
+
+  <section class="sec" id="sec-reserve">
+    <h2>🎫 予約コーナー</h2>
+    <div class="reserve">
+    <p class="reserve-lead">行きたい公演を選ぶと、予約の文ができるよ。そのままDMかメールで送ってね🎺</p>
+    <label>どの公演？<select id="rv-ev"><option value="261103">11/3(火) It&#x27;s a family affair vol.4</option><option value="261111">11/11(水) MicroLlamaレコ発『System Debug Operator』</option><option value="261114">11/14(土) Cliff Side Dream Dancing</option><option value="261116">11/16(月) Soirée Chanson Concert #362</option><option value="261117">11/17(火) JON(犬)ともん土の妖しいフレンチポップサークル♪</option><option value="261122">11/22(日) 美里ウィンチェスターわんまん屋さん</option><option value="261130">11/30(月) 胞擾ハーヴヱスト ~生命のニョッキを添えて~</option><option value="261212">12/12(土) 織田島酒店で逢いまショー♪</option><option value="270107">1/7(木) 音楽事故物件</option></select></label>
+    <div class="rv-row">
+      <label>おなまえ<input id="rv-name" type="text" autocomplete="name" placeholder="たぬきち"></label>
+      <label>枚数<select id="rv-n"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+    </div>
+    <label>ひとこと（なくてもOK）<input id="rv-memo" type="text"></label>
+    <div class="rv-preview" id="rv-text" aria-live="polite"></div>
+    <div class="big-btns"><button type="button" class="big-btn" id="rv-mail" data-m="dGFudWxhLmluLmJpZ2RpcHBlckBnbWFpbC5jb20=">💌 メールで送る</button><button type="button" class="big-btn" id="rv-dm" data-ig="magnesium.tanula">📩 文をコピーしてDMへ</button></div>
+    <p class="muted" id="rv-msg">このページには何も保存されません。</p>
+  </div>
+  </section>
+
+  <section class="sec" id="sec-release">
+    <h2>🎧 きいてみて</h2>
+    <div class="release">
+    <a class="release-cover" href="https://magnesiumtanula.bandcamp.com/album/dontt-think-play" target="_blank" rel="noopener"><img src="https://f4.bcbits.com/img/a1744376287_10.jpg" alt="貪心延奏/Dont&#x27;t think, PLAY! ジャケット"></a>
+    <div class="release-body">
+      <span class="release-head">🎧 松たぬら1st音源</span>
+      <h3 class="release-title">貪心延奏/Dont&#x27;t think, PLAY!</h3>
+      <p>情緒不安定な四曲入り！ライブ会場限定でCDでも販売しています。</p>
+    </div>
+    <iframe class="release-player" src="https://bandcamp.com/EmbeddedPlayer/album=2961515223/size=large/bgcol=ffffff/linkcol=e300a7/artwork=none/tracklist=false/transparent=true/" title="貪心延奏/Dont&#x27;t think, PLAY!" loading="lazy"></iframe>
+    <a class="release-link" href="https://magnesiumtanula.bandcamp.com/album/dontt-think-play" target="_blank" rel="noopener">Bandcampで聴く・買う ▶</a>
+  </div>
+  </section>
+
+  <section class="sec" id="sec-news">
+    <h2>📣 おしらせ</h2>
+    <ul class="news"><li><time datetime="2026-10-28">2026/10/28</time><span><a href="https://x.com/jirohendrix/status/2115402441420423370" target="_blank" rel="noopener">MicroLlamaのセカンドアルバム『System Debug Operator』（2026/12/9発売）のレコーディングに、ホーンでゲスト参加しました！11/11渋谷ラママのレコ発から先行発売です。</a></span></li><li><time datetime="2026-10-05">2026/10/5</time><span><a href="https://x.com/PatataConHuevos" target="_blank" rel="noopener">Patata con Huevos の正式な仲間になりました！楽しく怒っていくぞー！</a></span></li></ul>
+  </section>
+
+  <section class="sec" id="sec-units">
+    <h2>🎺 やってるやつ</h2>
+    <div class="units">
+<article class="unit" style="--u:#e0485b">
+  <div class="unit-head"><img class="unit-icon" src="assets/icons/magnesium.tanula.jpg" alt="" loading="lazy"><h3>松たぬら🪷MATSU TANULA</h3></div>
+  <p>歌🎺Rap等/ｿﾛ/ <a href="https://www.instagram.com/tanutowa.matsuri/" target="_blank" rel="noopener">@tanutowa.matsuri</a> / <a href="https://www.instagram.com/futariwainuka/" target="_blank" rel="noopener">@futariwainuka</a> /<a href="https://www.instagram.com/ringorila2025/" target="_blank" rel="noopener">@ringorila2025</a> / <a href="https://www.instagram.com/patata_con_huevos/" target="_blank" rel="noopener">@patata_con_huevos</a> / <a href="https://www.instagram.com/concretes1980/" target="_blank" rel="noopener">@concretes1980</a> (稀&amp;準) / <a href="https://www.instagram.com/kobomusica/" target="_blank" rel="noopener">@kobomusica</a>(音照見習)
+icon  by 日暮鍵心</p>
+  <div class="links"><a href="https://www.instagram.com/magnesium.tanula/" target="_blank" rel="noopener">Instagram</a> <a href="https://x.com/magnesiumTANULA" target="_blank" rel="noopener">X</a> <a href="https://www.threads.net/@magnesium.tanula" target="_blank" rel="noopener">Threads</a> <a href="https://www.tiktok.com/@magnesium.tanula" target="_blank" rel="noopener">TikTok</a> <a href="https://www.facebook.com/1197771910087800" target="_blank" rel="noopener">Facebook</a> <a href="https://lit.link/TANULA" target="_blank" rel="noopener">リンク集</a></div>
+</article>
+<article class="unit" style="--u:#3fa845">
+  <div class="unit-head"><img class="unit-icon" src="assets/icons/ringorila2025.jpg" alt="" loading="lazy"><h3>🍏リンゴリラ/RINGORILA🦍</h3></div>
+  <p>あけぼの印のVoﾋｻﾉﾋﾛｴ <a href="https://www.instagram.com/hiroehisano_akebonojirushi/" target="_blank" rel="noopener">@hiroehisano_akebonojirushi</a> Baひらたろう <a href="https://www.instagram.com/t.s.garpalin/" target="_blank" rel="noopener">@t.s.garpalin</a> 年結成25年Drｻﾄｳﾐﾉﾙ <a href="https://www.instagram.com/minoncho7/" target="_blank" rel="noopener">@minoncho7</a> Tp松ﾀﾇﾗ <a href="https://www.instagram.com/magnesium.tanula/" target="_blank" rel="noopener">@magnesium.tanula</a> を加え再始動沢山したいｳﾎ🍏🦍</p>
+  <div class="links"><a href="https://www.instagram.com/ringorila2025/" target="_blank" rel="noopener">Instagram</a> <a href="https://x.com/ringorila2025" target="_blank" rel="noopener">X</a> <a href="https://www.threads.net/@ringorila2025" target="_blank" rel="noopener">Threads</a> <a href="https://www.facebook.com/752748184595069" target="_blank" rel="noopener">Facebook</a> <a href="https://youtube.com/@ringorila2025?si=lX8TgjYLDb2tApGf" target="_blank" rel="noopener">YouTube</a></div>
+</article>
+<article class="unit" style="--u:#8e5cff">
+  <div class="unit-head"><img class="unit-icon" src="assets/icons/tanutowa.matsuri.jpg" alt="" loading="lazy"><h3>たぬとわ</h3></div>
+  <p>最愛Female Rapper Unit💎by愛狂ﾏｼﾏｼ珍獣
+<a href="https://www.instagram.com/magnesium.tanula/" target="_blank" rel="noopener">@magnesium.tanula</a> &amp; 深刻面白美怪物 <a href="https://www.instagram.com/towako_y/" target="_blank" rel="noopener">@towako_y</a>
+…そんな2人が出会ったらもう最高に楽しいね~~!!🤜🤛出演依頼ご予約お問い合わせはDMください！📬profile photo by 日暮鍵心</p>
+  <div class="links"><a href="https://www.instagram.com/tanutowa.matsuri/" target="_blank" rel="noopener">Instagram</a> <a href="https://x.com/tanutowamatsuri" target="_blank" rel="noopener">X</a> <a href="https://www.threads.net/@tanutowa.matsuri" target="_blank" rel="noopener">Threads</a> <a href="https://www.facebook.com/579872771875924" target="_blank" rel="noopener">Facebook</a> <a href="https://lit.link/tanutowa" target="_blank" rel="noopener">リンク集</a></div>
+</article>
+<article class="unit" style="--u:#a9743f">
+  <div class="unit-head"><img class="unit-icon" src="assets/icons/futariwainuka.jpg" alt="" loading="lazy"><h3>ご自愛楽団【いぬ科】</h3></div>
+  <p>ライブは決めごと50%以下、あとは意地でもインプロ！！私たちはこれからどこに向かうの？
+by首都圏中心で吠える二匹🐾
+松たぬら　<a href="https://www.instagram.com/magnesium.tanula/" target="_blank" rel="noopener">@magnesium.tanula</a>
+Hanna. <a href="https://www.instagram.com/hannainui/" target="_blank" rel="noopener">@hannainui</a></p>
+  <div class="links"><a href="https://www.instagram.com/futariwainuka/" target="_blank" rel="noopener">Instagram</a> <a href="https://www.facebook.com/482748161587048" target="_blank" rel="noopener">Facebook</a> <a href="https://artist.link/futariwainuka" target="_blank" rel="noopener">リンク集</a></div>
+</article>
+<article class="unit" style="--u:#c98a3a">
+  <div class="unit-head"><img class="unit-icon" src="assets/icons/patata_con_huevos.jpg" alt="" loading="lazy"><h3>Patata con Huevos</h3></div>
+  <p>🌹SOUND PROTEST ROCK BAND🎸
+against racism &amp; fascism</p>
+  <div class="links"><a href="https://www.instagram.com/patata_con_huevos/" target="_blank" rel="noopener">Instagram</a> <a href="https://x.com/PatataConHuevos" target="_blank" rel="noopener">X</a></div>
+</article></div>
+    <h3 class="work-title">🔧 バイト先</h3>
+    <div class="units">
+<article class="unit" style="--u:#6b7280">
+  <div class="unit-head"><img class="unit-icon" src="assets/icons/kobomusica.jpg" alt="" loading="lazy"><h3>工房ムジカ　CaféMusica &amp; BAR日暮里モンパルナス<small class="unit-role">バイト先（音照見習）</small></h3></div>
+  <p>文学と音楽、ときどき猫。
+詩人葛原りょうプロデュースのBARとイベントスペース。
+日暮里駅北改札西出口より徒歩3分</p>
+  <div class="links"><a href="https://www.instagram.com/kobomusica/" target="_blank" rel="noopener">Instagram</a> <a href="https://x.com/koubomusica" target="_blank" rel="noopener">X</a> <a href="https://www.facebook.com/koubomusica" target="_blank" rel="noopener">Facebook</a></div>
+</article></div>
+  </section>
+
+  <section class="sec" id="sec-contact">
+    <h2>💌 ご連絡</h2>
+    <div class="contact"><h3 class="contact-title">出演依頼お待ちして居り<span class="masu">〼</span>！</h3><p>各SNSのDMまたはメールにてお気軽にご連絡ください♪</p><div class="big-btns"><a class="big-btn" href="https://ig.me/m/magnesium.tanula" target="_blank" rel="noopener">📩 InstagramのDM</a><a class="big-btn" href="https://x.com/magnesiumTANULA" target="_blank" rel="noopener">📩 XのDM</a><button type="button" class="big-btn" id="mail-btn" data-m="dGFudWxhLmluLmJpZ2RpcHBlckBnbWFpbC5jb20=">💌 メールする</button></div></div>
+  </section>
+</div>
+
+<footer>
+  <div class="links"><a href="https://www.instagram.com/magnesium.tanula/" target="_blank" rel="noopener">Instagram</a> <a href="https://x.com/magnesiumTANULA" target="_blank" rel="noopener">X</a> <a href="https://www.threads.net/@magnesium.tanula" target="_blank" rel="noopener">Threads</a> <a href="https://www.tiktok.com/@magnesium.tanula" target="_blank" rel="noopener">TikTok</a> <a href="https://youtu.be/v3FuEV36BJw" target="_blank" rel="noopener">YouTube</a> <a href="https://www.facebook.com/1197771910087800" target="_blank" rel="noopener">Facebook</a> <a href="https://lit.link/TANULA" target="_blank" rel="noopener">lit.link</a></div>
+  予定の更新: 2026-10-30 18:36 ／ © 松たぬら ／ <span id="icon-credit">アイコン写真: 日暮鍵心</span>
+</footer>
+</div>
+<script type="application/json" id="cal-data">[{"id": "261031", "date": "2026-10-31", "m": 10, "d": 31, "dow": "土", "unit": "potato", "label": "路哲", "emoji": "🥔", "color": "#c98a3a", "title": "路哲 PROTEST HALLOWEEN", "confirmed": true, "venue": "新宿駅東南口広場", "when": "", "ticket": "", "guests": "路哲", "flyer": "https://d3e0luujhwn38u.cloudfront.net/resized/BJz6q7Fg1IRTq-DjZnP4UKdRkk6wmXWvtRqmzUpXy9c/s:3200/plain/s3://typefully-user-uploads/img/original/332740/fa5e6bc7-e1a8-47bb-b1fb-78203c4d4d5a.jpg", "reservable": false}, {"id": "261103", "date": "2026-11-03", "m": 11, "d": 3, "dow": "火", "unit": "apple", "label": "リンゴリラ", "emoji": "🍏", "color": "#3fa845", "title": "It's a family affair vol.4", "confirmed": true, "venue": "高円寺JIROKICHI", "when": "開場 18:30 / 開演 19:00", "ticket": "予約・当日とも¥3,000＋1ドリンクオーダー", "guests": "倉谷和宏／JabBee／THE GOLDEN CROWNS／スダッチ&SPコネクション", "flyer": "https://d3e0luujhwn38u.cloudfront.net/resized/YghbpKh4iFHvc4qEqBtVvgCE3BQp4_OPQD50x18OWKA/s:3200/plain/s3://typefully-user-uploads/img/original/332740/308ae428-57ba-4d78-a117-9e28259f69eb.jpg", "reservable": true}, {"id": "261111", "date": "2026-11-11", "m": 11, "d": 11, "dow": "水", "unit": "heartorgan", "label": "ソロ", "emoji": "🫀", "color": "#e0485b", "title": "MicroLlamaレコ発『System Debug Operator』", "confirmed": true, "venue": "渋谷ラママ", "when": "開場 19:00 / 開演 19:30", "ticket": "前売・当日とも¥3,500（+1D）", "guests": "MicroLlama／松永天馬／山下メロのニュー文化／シャウワウ ほか（DJ：エリヌ＆マコピ）", "flyer": "https://d3e0luujhwn38u.cloudfront.net/resized/t0Ctkjk9esNTXUKNM7y7OaC9iyU9mFeM4ACMlEuo0yQ/s:3200/plain/s3://typefully-user-uploads/img/original/332740/b2fa8b34-9952-4464-83f3-6fb6dc1200f7.jpg", "reservable": true}, {"id": "261114", "date": "2026-11-14", "m": 11, "d": 14, "dow": "土", "unit": "sax", "label": "ビッグバンド", "emoji": "🎷", "color": "#d9a21b", "title": "Cliff Side Dream Dancing", "confirmed": true, "venue": "横浜元町 クリフサイド", "when": "", "ticket": "3,000円（テーブルチャージ・1ドリンク込）", "guests": "横濱ダンス・ビッグバンド（YDBB／2011年結成）で出演", "flyer": "https://d3e0luujhwn38u.cloudfront.net/resized/6JTTesw1Uh7hQ-Nhy9fetdJ4_PcncDWZUh64M1_3eOI/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9de47038-62cd-4009-a6c6-397563edc151.jpg", "reservable": true}, {"id": "261116", "date": "2026-11-16", "m": 11, "d": 16, "dow": "月", "unit": "heartorgan", "label": "ソロ", "emoji": "🫀", "color": "#e0485b", "title": "Soirée Chanson Concert #362", "confirmed": true, "venue": "高円寺 十話音", "when": "開場 18:00 / 開演 19:00", "ticket": "1stage¥1,000+2order（入場時のみ）", "guests": "ドビッチーまゆ／ソワレ／沙弥朗", "flyer": "https://d3e0luujhwn38u.cloudfront.net/resized/B3i10eaUlabCutHe6oxR2jG_HZXcTRinnqvw9ev8NVw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/eef46eb1-7461-4684-9b37-c9dee25c8aed.jpg", "reservable": true}, {"id": "261117", "date": "2026-11-17", "m": 11, "d": 17, "dow": "火", "unit": "heartorgan", "label": "ソロ", "emoji": "🫀", "color": "#e0485b", "title": "JON(犬)ともん土の妖しいフレンチポップサークル♪", "confirmed": true, "venue": "高円寺 十話音", "when": "", "ticket": "予約¥3,000／当日¥3,500（+2order）", "guests": "大河もん土／ちんすこうルー［JON(犬)］／ドビッチーまゆ(piano)", "flyer": "https://d3e0luujhwn38u.cloudfront.net/resized/8gKSXJ4vrkq2iBwrqNti-aEtSMtWz9RqUemXV_XqAco/s:3200/plain/s3://typefully-user-uploads/img/original/332740/5482c929-e90e-4770-a699-8599537f7eb5.jpg", "reservable": true}, {"id": "261122", "date": "2026-11-22", "m": 11, "d": 22, "dow": "日", "unit": "gem", "label": "たぬとわ", "emoji": "💎", "color": "#8e5cff", "title": "美里ウィンチェスターわんまん屋さん", "confirmed": true, "venue": "新宿 RedCloth", "when": "開場 17:30 / 開演 18:00", "ticket": "予約¥3,000／当日¥3,500（共に+1ドリンク代）", "guests": "美里ウィンチェスター（主役）／OA(1) たぬとわ／OA(2) 未定", "flyer": "https://d3e0luujhwn38u.cloudfront.net/resized/ZUzeYt51FmlOi0dNXeB6ELRiY0-Mgug4RyvIyFrhJfY/s:3200/plain/s3://typefully-user-uploads/img/original/332740/9b599b2b-c4a2-45a2-9f64-6b5d4d369c47.jpg", "reservable": true}, {"id": "261128", "date": "2026-11-28", "m": 11, "d": 28, "dow": "土", "unit": "potato", "label": "路哲", "emoji": "🥔", "color": "#c98a3a", "title": "なんかある！（詳細は後日）", "confirmed": false, "venue": "宇都宮", "when": "", "ticket": "", "guests": "", "flyer": "", "reservable": false}, {"id": "261130", "date": "2026-11-30", "m": 11, "d": 30, "dow": "月", "unit": "gem", "label": "たぬとわ", "emoji": "💎", "color": "#8e5cff", "title": "胞擾ハーヴヱスト ~生命のニョッキを添えて~", "confirmed": true, "venue": "阿佐ヶ谷 mogumogu", "when": "開場 18:30 / 開演 19:00", "ticket": "料金¥2,500＋1ドリンク", "guests": "斉藤めい、パワーパーティ900", "flyer": "https://d3e0luujhwn38u.cloudfront.net/resized/v2BIb2K7v10ht8uN1Gq2fCK5zk3cQiLyBDdznhvTCi0/s:3200/plain/s3://typefully-user-uploads/img/original/332740/a83ea171-58e3-4835-94a8-3e258a09c598.jpg", "reservable": true}, {"id": "261204", "date": "2026-12-04", "m": 12, "d": 4, "dow": "金", "unit": "gem", "label": "たぬとわ", "emoji": "💎", "color": "#8e5cff", "title": "なんかある！（詳細は後日）", "confirmed": false, "venue": "", "when": "", "ticket": "", "guests": "", "flyer": "", "reservable": false}, {"id": "261212", "date": "2026-12-12", "m": 12, "d": 12, "dow": "土", "unit": "apple", "label": "リンゴリラ", "emoji": "🍏", "color": "#3fa845", "title": "織田島酒店で逢いまショー♪", "confirmed": true, "venue": "国立・織田島酒店", "when": "開場 14:00 / 開演 14:30", "ticket": "料金¥2,500（飲食物の購入をお願いします）", "guests": "", "flyer": "https://d3e0luujhwn38u.cloudfront.net/resized/o7Pn1Di4JU0vjznM9HquJwMJWBdYQ6KIKe4To1M8oEw/s:3200/plain/s3://typefully-user-uploads/img/original/332740/f9423a2e-a4a8-4d4c-8f84-aa335d9c8d70.jpg", "reservable": true}, {"id": "261227", "date": "2026-12-27", "m": 12, "d": 27, "dow": "日", "unit": "wrench", "label": "ムジカPA", "emoji": "🔧", "color": "#6b7280", "title": "なんかある！（詳細は後日）", "confirmed": false, "venue": "日暮里ムジカ", "when": "", "ticket": "", "guests": "", "flyer": "", "reservable": false}, {"id": "270107", "date": "2027-01-07", "m": 1, "d": 7, "dow": "木", "unit": "apple", "label": "リンゴリラ", "emoji": "🍏", "color": "#3fa845", "title": "音楽事故物件", "confirmed": true, "venue": "高円寺 ShowBoat", "when": "開場 18:30 / 開演 19:00", "ticket": "¥3,000（D別）", "guests": "ケキャール！／ミッドカンブリアンピリオド", "flyer": "https://d3e0luujhwn38u.cloudfront.net/resized/zYgdXKyNTzwmikRVZ678iq-lDp2a0Xxb7QmULUoGnpo/s:3200/plain/s3://typefully-user-uploads/img/original/332740/c8da8f35-2986-4969-b059-4389369ed1c3.jpg", "reservable": true}]</script>
+<script>
+(function(){
+  /* タブ */
+  var tabs=document.querySelectorAll('.tab'),panes=document.querySelectorAll('.pane');
+  function show(t){tabs.forEach(function(b){b.classList.toggle('on',b.getAttribute('data-t')===t)});
+    panes.forEach(function(p){p.classList.toggle('on',p.getAttribute('data-pane')===t)});
+    window.dispatchEvent(new CustomEvent('tanura-tab',{detail:t}));}
+  tabs.forEach(function(b){b.onclick=function(){show(b.getAttribute('data-t'))}});
+  show(tabs.length?tabs[0].getAttribute('data-t'):'');
+
+  /* 新聞→フライヤーの帯 */
+  var r=document.getElementById('reel');
+  if(r){
+    var slides=[].slice.call(r.children),i=0,timer=null,hold=0,playing=!matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var dots=document.getElementById('reel-dots'),play=document.getElementById('reel-play'),visible=true,active=true;
+    slides.forEach(function(){dots.appendChild(document.createElement('i'))});
+    function mark(){[].forEach.call(dots.children,function(d,n){d.classList.toggle('on',n===i)})}
+    function go(n){i=(n+slides.length)%slides.length;var s=slides[i];
+      r.scrollTo({left:s.offsetLeft-(r.clientWidth-s.offsetWidth)/2,behavior:'smooth'});mark();}
+    function tick(){clearTimeout(timer);if(!playing)return;
+      timer=setTimeout(function(){
+        if(playing&&visible&&active&&!document.hidden&&Date.now()>hold)go(i+1);
+        tick();},(parseFloat(slides[i].getAttribute('data-sec'))||4)*1000);}
+    function setPlay(p){playing=p;play.textContent=p?'⏸ とめる':'▶ ながす';tick();}
+    function touch(){hold=Date.now()+7000}
+    ['pointerdown','wheel','touchstart'].forEach(function(ev){r.addEventListener(ev,touch,{passive:true})});
+    r.addEventListener('mouseenter',function(){hold=Date.now()+60000});
+    r.addEventListener('mouseleave',function(){hold=0});
+    r.addEventListener('scroll',function(){var c=r.scrollLeft+r.clientWidth/2,b=0,m=1e9;
+      slides.forEach(function(s,n){var d=Math.abs(s.offsetLeft+s.offsetWidth/2-c);if(d<m){m=d;b=n}});
+      if(b!==i){i=b;mark()}},{passive:true});
+    document.getElementById('reel-prev').onclick=function(){touch();go(i-1)};
+    document.getElementById('reel-next').onclick=function(){touch();go(i+1)};
+    play.onclick=function(){setPlay(!playing)};
+    if('IntersectionObserver' in window){new IntersectionObserver(function(e){visible=e[0].isIntersecting}).observe(r)}
+    window.addEventListener('tanura-tab',function(e){active=e.detail==='paper'});
+    mark();setPlay(playing);
+  }
+
+  /* 月カレンダー */
+  var el=document.getElementById('cal');
+  if(el){
+    var EV=JSON.parse(document.getElementById('cal-data').textContent),now=new Date();
+    function pad(n){return (n<10?'0':'')+n}
+    var todayS=now.getFullYear()+'-'+pad(now.getMonth()+1)+'-'+pad(now.getDate());
+    var byDay={};EV.forEach(function(e){(byDay[e.date]=byDay[e.date]||[]).push(e)});
+    function ym(s){var p=s.split('-');return (+p[0])*12+(+p[1])-1}
+    var minM=ym(todayS),maxM=EV.length?Math.max(ym(EV[EV.length-1].date),minM):minM,cur=EV.length?ym(EV[0].date):minM,sel=EV.length?EV[0].date:null;
+    var E=function(s){var d=document.createElement('div');d.textContent=s==null?'':s;return d.innerHTML};
+    var DOW=['にち','げつ','か','すい','もく','きん','ど'];
+    function detail(){if(!sel||!byDay[sel])return '<p class="cal-none">★の日を押すと中身が出るよ</p>';
+      return byDay[sel].map(function(e){var h='<span class="chip" style="--u:'+E(e.color)+'">'+e.emoji+' '+E(e.label)+'</span><h3>'+e.m+'/'+e.d+'('+E(e.dow)+') '+E(e.title)+'</h3>';
+        if(e.venue)h+='<p>📍 '+E(e.venue)+'</p>';if(e.when)h+='<p>⏰️ '+E(e.when)+'</p>';if(e.ticket)h+='<p>🎫 '+E(e.ticket)+'</p>';
+        if(e.reservable)h+='<a class="rv-btn" href="#sec-reserve" data-rv="'+E(e.id)+'">🎫 予約する</a>';
+        if(e.flyer)h+='<a href="'+E(e.flyer)+'" target="_blank" rel="noopener"><img src="'+E(e.flyer)+'" alt="フライヤー"></a>';return h}).join('');}
+    function render(){var y=Math.floor(cur/12),m=cur%12,first=new Date(y,m,1).getDay(),days=new Date(y,m+1,0).getDate();
+      var h='<div class="cal-head"><button type="button" id="cal-p" aria-label="前の月"'+(cur<=minM?' disabled':'')+'>◀</button><span class="cal-title">'+y+'年'+(m+1)+'月</span><button type="button" id="cal-n" aria-label="次の月"'+(cur>=maxM?' disabled':'')+'>▶</button></div><div class="cal-grid">';
+      DOW.forEach(function(d){h+='<div class="cal-dow">'+d+'</div>'});
+      for(var b=0;b<first;b++)h+='<div></div>';
+      for(var d=1;d<=days;d++){var ds=y+'-'+pad(m+1)+'-'+pad(d),ev=byDay[ds],cls='cal-cell'+(ds<todayS?' past':'')+(ds===todayS?' today':'')+(ev?' has':'')+(ds===sel?' sel':'');
+        var rot=ev?((d*37)%9-4):0;
+        h+=ev?'<button type="button" class="'+cls+'" data-d="'+ds+'" style="--r:'+rot+'deg"><span>'+d+'</span><b>'+ev.map(function(x){return x.emoji}).join('')+'</b></button>':'<div class="'+cls+'"><span>'+d+'</span></div>';}
+      h+='</div><div class="cal-detail">'+detail()+'</div>';el.innerHTML=h;
+      var p=document.getElementById('cal-p'),n=document.getElementById('cal-n');
+      function pick(){var f=EV.filter(function(e){return ym(e.date)===cur})[0];sel=f?f.date:null}
+      p.onclick=function(){if(cur>minM){cur--;pick();render()}};n.onclick=function(){if(cur<maxM){cur++;pick();render()}};
+      el.querySelectorAll('.cal-cell.has').forEach(function(c){c.onclick=function(){sel=c.getAttribute('data-d');render()}});}
+    render();
+  }
+
+  /* 予約コーナー（入力はサイトに保存しない。メールかDMの文を作るだけ） */
+  var rvEv=document.getElementById('rv-ev');
+  if(rvEv){
+    var rvName=document.getElementById('rv-name'),rvN=document.getElementById('rv-n'),rvMemo=document.getElementById('rv-memo'),rvText=document.getElementById('rv-text'),rvMsg=document.getElementById('rv-msg');
+    function rvShow(){return rvEv.options[rvEv.selectedIndex].text}
+    function rvBody(){return '予約お願いします！\n公演：'+rvShow()+'\nおなまえ：'+(rvName.value||'（おなまえを入れてね）')+'\n枚数：'+rvN.value+'枚'+(rvMemo.value?'\nひとこと：'+rvMemo.value:'')}
+    function rvUpdate(){rvText.textContent=rvBody()}
+    [rvEv,rvName,rvN,rvMemo].forEach(function(x){x.addEventListener('input',rvUpdate);x.addEventListener('change',rvUpdate)});
+    rvUpdate();
+    document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('[data-rv]');if(a){rvEv.value=a.getAttribute('data-rv');rvUpdate()}});
+    function rvOk(){if(rvName.value.trim())return true;rvMsg.textContent='おなまえを入れてね';rvName.focus();return false}
+    var rvMail=document.getElementById('rv-mail');
+    if(rvMail)rvMail.onclick=function(){if(!rvOk())return;
+      location.href='mailto:'+atob(rvMail.getAttribute('data-m'))+'?subject='+encodeURIComponent('【予約】'+rvShow())+'&body='+encodeURIComponent(rvBody())};
+    var rvDm=document.getElementById('rv-dm');
+    if(rvDm)rvDm.onclick=function(){if(!rvOk())return;var url='https://ig.me/m/'+rvDm.getAttribute('data-ig');
+      var done=function(){rvMsg.textContent='文をコピーしました。DMに貼って送ってね';window.open(url,'_blank','noopener')};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(rvBody()).then(done,function(){rvMsg.textContent='コピーできなかったので、上の文を長押しでコピーしてね';window.open(url,'_blank','noopener')})}else{rvMsg.textContent='上の文をコピーしてDMに貼ってね';window.open(url,'_blank','noopener')}};
+  }
+
+  /* メール（押した時だけアドレスを組み立てる） */
+  var mb=document.getElementById('mail-btn');
+  if(mb)mb.onclick=function(){location.href='mailto:'+atob(mb.getAttribute('data-m'))};
+})();
+</script>
+
+</body>
+</html>
