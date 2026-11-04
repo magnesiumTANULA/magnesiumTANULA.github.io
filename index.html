@@ -72,7 +72,13 @@ h2{font-family:var(--head);font-weight:400;font-size:clamp(25px,6.6vw,34px);line
 [data-layout="next"] #sec-next{order:1} [data-layout="next"] #sec-schedule{order:2} [data-layout="next"] #sec-reserve{order:3} [data-layout="next"] #sec-release{order:4} [data-layout="next"] #sec-units{order:6} [data-layout="next"] #sec-contact{order:7}
 [data-layout="music"] #sec-release{order:1} [data-layout="music"] #sec-schedule{order:2} [data-layout="music"] #sec-reserve{order:3} [data-layout="music"] #sec-units{order:5} [data-layout="music"] #sec-contact{order:6} [data-layout="music"] #sec-next{display:none}
 
-#sec-news{order:0}
+#sec-news{order:0} #sec-photos{order:5}
+.photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+.photos a{display:block;background:var(--card);border:var(--line) solid var(--shadow);border-radius:calc(var(--radius)/2);overflow:hidden;box-shadow:3px 3px 0 var(--shadow)}
+.photos img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.video{background:var(--card);border:var(--line) solid var(--shadow);border-radius:var(--radius);padding:10px;box-shadow:5px 5px 0 var(--pop2)}
+.video iframe{width:100%;aspect-ratio:16/9;border:0;display:block;border-radius:calc(var(--radius)/2)}
+.video p{margin:8px 2px 0;font-size:14px}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
 .tab{border:var(--line) solid var(--shadow);background:var(--bar);color:var(--ink);font-weight:900;font-size:15px;padding:7px 13px;border-radius:999px;cursor:pointer;box-shadow:3px 3px 0 var(--shadow);transition:transform .12s}
 .tab:hover{transform:translateY(-2px) rotate(calc(-2deg*var(--k)))}
@@ -436,6 +442,7 @@ against racism &amp; fascism</p>
     <p class="muted scroll-hint">← よこにスクロール →</p>
   </section>
 
+
   <section class="sec" id="sec-contact">
     <h2>💌 ご連絡</h2>
     <div class="contact"><h3 class="contact-title">出演依頼お待ちして居り<span class="masu">〼</span>！</h3><p>各SNSのDMまたはメールにてお気軽にご連絡ください♪</p><div class="big-btns"><a class="big-btn" href="https://ig.me/m/magnesium.tanula" target="_blank" rel="noopener">📩 InstagramのDM</a><a class="big-btn" href="https://x.com/magnesiumTANULA" target="_blank" rel="noopener">📩 XのDM</a><button type="button" class="big-btn" id="mail-btn" data-m="dGFudWxhLmluLmJpZ2RpcHBlckBnbWFpbC5jb20=">💌 メールする</button></div></div>
@@ -444,7 +451,7 @@ against racism &amp; fascism</p>
 
 <footer>
   <div class="links"><a href="https://www.instagram.com/magnesium.tanula/" target="_blank" rel="noopener">Instagram</a> <a href="https://x.com/magnesiumTANULA" target="_blank" rel="noopener">X</a> <a href="https://www.threads.net/@magnesium.tanula" target="_blank" rel="noopener">Threads</a> <a href="https://www.tiktok.com/@magnesium.tanula" target="_blank" rel="noopener">TikTok</a> <a href="https://youtu.be/v3FuEV36BJw" target="_blank" rel="noopener">YouTube</a> <a href="https://www.facebook.com/1197771910087800" target="_blank" rel="noopener">Facebook</a> <a href="https://lit.link/TANULA" target="_blank" rel="noopener">lit.link</a></div>
-  予定の更新: 2026-11-04 08:12 ／ © 松たぬら ／ <span id="icon-credit">アイコン写真: 日暮鍵心</span>
+  予定の更新: 2026-11-04 13:11 ／ © 松たぬら ／ <span id="icon-credit">アイコン写真: 日暮鍵心</span>
 </footer>
 </div>
 <dialog id="zoom" aria-labelledby="zoom-title">
